@@ -1,0 +1,99 @@
+---
+title: File Uploads
+description: Attach files to your chat messages for AI analysis, summaries, and data insights.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# File Uploads
+
+You can attach files directly to your messages — documents, spreadsheets, images, and more. Suprvisr reads and analyzes the content so you can ask questions about it.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">File upload in action</div>
+  <div className="gif-placeholder-label">GIF placeholder — drag-and-drop or button upload, then asking a question</div>
+</div>
+
+---
+
+## How to attach a file
+
+There are two ways:
+
+**Option 1 — Drag and drop**
+Drag any file from your computer and drop it onto the chat area. The file is automatically attached.
+
+**Option 2 — Click the + button**
+Click the **+ icon** to the left of the message input to open a file picker.
+
+---
+
+## File status indicators
+
+After attaching a file, a chip appears in the input area showing the file's status:
+
+| Status | What it means |
+|---|---|
+| ⟳ Spinner | File is uploading |
+| ✓ Checkmark | Ready to send with your message |
+| ⚠ Triangle | Upload failed — try again |
+
+You can remove an attached file by clicking the **X** on its chip before sending.
+
+---
+
+## Supported file types
+
+<Steps>
+
+### Documents and images
+
+Word documents, PDFs, images (JPG, PNG, WebP, GIF), and plain text files are attached directly to your message and sent to the AI for processing.
+
+### Spreadsheets and CSVs
+
+CSV and Excel files are handled differently — they're uploaded as **data assets** and linked to your conversation. The AI can query, summarize, and visualize the data.
+
+### Multiple files
+
+You can attach multiple files at once. Each appears as its own chip in the input area.
+
+</Steps>
+
+---
+
+## What to do with uploaded files
+
+Once a file is attached and your message is sent, you can ask the AI to:
+
+- **Summarize** — "Summarize the key points from this document"
+- **Analyze data** — "What are the trends in this spreadsheet?"
+- **Answer questions** — "Does this PDF mention anything about the refund policy?"
+- **Extract information** — "List all action items from this meeting notes document"
+- **Compare** — "Compare the content of these two files"
+
+<Callout type="tip">
+  For large documents, be specific about what you want. "Summarize section 3" is faster and more accurate than "summarize everything."
+</Callout>
+
+---
+
+## File size limits
+
+| Type | Limit |
+|---|---|
+| Images | Up to 5MB |
+| Documents | Up to 5MB |
+| Spreadsheets / CSV | Up to 5MB |
+
+<Callout type="info">
+  For SharePoint documents, you don't need to upload files manually — they're available directly through the SharePoint integration.
+</Callout>
+
+---
+
+## Related
+
+- [AI Chat](/features/ai-chat) — the main chat interface
+- [SharePoint Integration](/features/sharepoint) — connect your document library for hands-free file access

@@ -1,0 +1,108 @@
+---
+title: SharePoint Integration
+description: Connect your SharePoint document libraries so Suprvisr AI can reference your files.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# SharePoint Integration
+
+Connect Suprvisr to your Microsoft SharePoint document libraries. Once connected, the AI can reference, search, and answer questions about your organization's documents directly — no manual uploads required.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">SharePoint connection flow</div>
+  <div className="gif-placeholder-label">GIF placeholder — connecting a SharePoint site, selecting a library, sync status</div>
+</div>
+
+---
+
+## What it does
+
+With SharePoint connected, Suprvisr can:
+
+- **Search your documents** for relevant information when you ask a question
+- **Reference specific files** without you having to upload them manually
+- **Show sources** — when the AI uses a SharePoint document, it shows the source alongside the response
+- **Stay in sync** — your document library is periodically synced so the AI has fresh content
+
+---
+
+## Setting up SharePoint
+
+<Steps>
+
+### Go to Settings → Integrations
+
+Click **Settings** (gear icon) → select the **Integrations** tab → click **SharePoint**.
+
+### Connect your site
+
+Click **Add Connection** and authenticate with your Microsoft account. Grant the required permissions to access your SharePoint sites.
+
+### Select a document library
+
+Choose which SharePoint site and document library (drive) to sync. You can add multiple sites.
+
+### Wait for the initial sync
+
+Suprvisr syncs your documents in the background. The sync status shows the last sync time and document count.
+
+</Steps>
+
+---
+
+## Sync status
+
+| Status | Meaning |
+|---|---|
+| **Active** | Connected and syncing normally |
+| **Syncing** | Currently processing documents |
+| **Error** | Sync failed — check the error message |
+
+Click **Refresh** to manually trigger a sync at any time.
+
+---
+
+## Using SharePoint in chat
+
+Once connected, just ask naturally — the AI searches your SharePoint content automatically when relevant:
+
+- "Does our employee handbook cover remote work policies?"
+- "What does our Q3 sales report say about Canada?"
+- "Find the latest version of our service agreement template"
+
+<Callout type="tip">
+  Be specific about what you're looking for. The AI searches by relevance — the more context you give, the more accurate the result.
+</Callout>
+
+---
+
+## Document sources
+
+When the AI references a SharePoint document, it shows the source in the response — including the site name and drive. This helps you verify information and navigate back to the original file.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">SharePoint source citations</div>
+  <div className="gif-placeholder-label">GIF placeholder — AI response with SharePoint source shown</div>
+</div>
+
+---
+
+## Disconnecting
+
+To remove a SharePoint connection:
+
+1. Go to **Settings → Integrations → SharePoint**
+2. Find the connected site
+3. Click **Disconnect**
+
+The documents are removed from the AI's context immediately.
+
+---
+
+## Related
+
+- [File Uploads](/features/file-uploads) — manually attach files if you don't use SharePoint
+- [Admin Setup](/guides/admin-setup) — organization-level integration management

@@ -1,0 +1,144 @@
+---
+title: AI Chat
+description: Suprvisr's AI Chat — streaming responses, role-aware answers, and example prompts.
+---
+
+import { Callout, Steps, Tabs } from 'nextra/components'
+
+# AI Chat
+
+The AI Chat is the core of Suprvisr. Ask questions, draft documents, analyze data, and get instant answers tailored to your role.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">AI Chat in action</div>
+  <div className="gif-placeholder-label">GIF placeholder — full chat interaction</div>
+</div>
+
+---
+
+## Starting a conversation
+
+<Steps>
+
+### Open a chat
+
+Click **New Chat** (+ icon) in the top-left of the sidebar, or select any existing conversation from the list.
+
+### Type your message
+
+Use the message input at the bottom of the screen. It auto-expands as you type.
+
+### Send your message
+
+Press **Enter** to send. Use **Shift + Enter** to add a new line without sending.
+
+### Watch it stream
+
+Suprvisr streams responses in real time — you see the answer as it generates, not all at once.
+
+</Steps>
+
+---
+
+## Role-aware responses
+
+When you select your role during onboarding, the AI adapts how it communicates:
+
+| Your role | What changes |
+|---|---|
+| **Developer / Engineer** | Technical detail, code examples, debugging guidance |
+| **Product Manager** | Strategic framing, spec-writing, stakeholder summaries |
+| **Designer / Marketer** | Creative suggestions, copy, visual thinking |
+| **Other** | Balanced, general-purpose responses |
+
+<Callout type="info">
+  Change your role anytime in **Settings → Personalization**. It takes effect in new chats immediately.
+</Callout>
+
+---
+
+## Example prompts (dice icon)
+
+Not sure what to ask? Click the **dice icon** in the empty chat state to get a role-specific example prompt. Click it again to cycle through options — then click any prompt to drop it into the input field.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Dice / Example prompts</div>
+  <div className="gif-placeholder-label">GIF placeholder — clicking dice and selecting a prompt</div>
+</div>
+
+---
+
+## Stopping generation
+
+If the AI is mid-response and you want to redirect it, click the **red square (stop) button** that appears in place of the send button during generation.
+
+<Callout type="tip">
+  Stop generation when: the AI is going in the wrong direction, the response is already long enough, or you want to refine your prompt.
+</Callout>
+
+---
+
+## AI thinking & reasoning
+
+For complex queries, Suprvisr shows its reasoning in real time:
+
+- **Thinking** — initial processing state
+- **Reasoning with your query** — appears after ~3.5s, shows active reasoning
+- **Observations** — tool calls, data lookups, and results as they happen
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">AI reasoning & observations</div>
+  <div className="gif-placeholder-label">GIF placeholder — real-time thinking display</div>
+</div>
+
+---
+
+## Keyboard shortcuts
+
+| Action | Shortcut |
+|---|---|
+| Send message | `Enter` |
+| New line | `Shift + Enter` |
+| Stop generation | Click red square button |
+
+---
+
+## What to ask
+
+<Tabs items={['Developer', 'Product Manager', 'Designer / Marketer', 'General']}>
+  <Tabs.Tab>
+    - "Why would my React component re-render unnecessarily?"
+    - "Write a TypeScript function that debounces API calls"
+    - "Explain the difference between optimistic and pessimistic locking"
+    - "Review this SQL query for performance issues: [paste query]"
+  </Tabs.Tab>
+  <Tabs.Tab>
+    - "Draft a one-pager for a feature that lets users export their data"
+    - "What metrics should I track for a new onboarding flow?"
+    - "Write an executive summary for this sprint's outcomes"
+    - "What are the key risks in this product decision?"
+  </Tabs.Tab>
+  <Tabs.Tab>
+    - "Write 5 tagline options for a B2B SaaS product"
+    - "Summarize this user feedback and identify top themes"
+    - "What's the best way to A/B test a landing page headline?"
+    - "Rewrite this email to sound more human and less corporate"
+  </Tabs.Tab>
+  <Tabs.Tab>
+    - "Summarize this document in 3 bullet points: [paste text]"
+    - "What are the pros and cons of approach A vs B?"
+    - "Help me write a follow-up email to a client"
+    - "Explain this concept simply, as if I'm new to it"
+  </Tabs.Tab>
+</Tabs>
+
+---
+
+## Related
+
+- [Conversations](/features/conversations) — manage and organize your chats
+- [File Uploads](/features/file-uploads) — attach files and documents to your messages
+- [Prompt Strategies](/guides/prompt-strategies) — get better answers with better prompts

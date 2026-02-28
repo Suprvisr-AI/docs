@@ -1,0 +1,81 @@
+---
+title: Citations
+description: Every AI response that draws from your internal data includes source citations you can explore without leaving the chat.
+---
+
+import { Callout } from 'nextra/components'
+
+# Citations
+
+When Suprvisr uses your internal data to answer a question — from a SharePoint document, an uploaded file, or a connected integration — it shows exactly where that information came from. Citations appear as **Cards** that you can open and explore without disrupting the conversation.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Citations in action</div>
+  <div className="gif-placeholder-label">GIF placeholder — AI response with citation cards, expanding to see source</div>
+</div>
+
+---
+
+## How citations work
+
+Every time the AI references internal data — a document, a file section, a record from an integration — it surfaces a **Citation Card** below the response. Each card shows:
+
+- **Source name** — the document or file the information came from
+- **Specific section** — the exact section or passage referenced, not just the file name
+- **Confidence** — how closely the cited content matches your question
+
+---
+
+## Citation Cards
+
+Citation Cards live below the AI's response. They're compact by default — click to expand and read the full source excerpt.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Exploring a Citation Card</div>
+  <div className="gif-placeholder-label">GIF placeholder — clicking a citation card, reading the source, asking a follow-up</div>
+</div>
+
+### Probing deeper
+
+Each Citation Card lets you ask follow-up questions scoped to that source. Click **Ask about this source** within the card to start a focused conversation about that specific document — without interrupting your main chat thread.
+
+<Callout type="tip">
+  Use citation cards to verify the AI's answer before acting on it. If the cited section doesn't support the response, that's useful signal — you can ask the AI to reconsider.
+</Callout>
+
+---
+
+## When you'll see citations
+
+Citations appear when the AI draws from:
+
+| Source | Example |
+|---|---|
+| **SharePoint documents** | Your company's policies, procedures, templates |
+| **Uploaded files** | PDFs, Word docs, spreadsheets you've attached to a message |
+| **Workspace context** | Documents assigned to a Workspace |
+| **Connected integrations** | Any data source connected to your org |
+
+<Callout type="info">
+  General AI knowledge (not from your internal data) does not produce citations — those responses draw from the model's training. Citations only appear when internal data was specifically used.
+</Callout>
+
+---
+
+## Why this matters
+
+- **Verify accuracy** — you can check the source and confirm the AI got it right
+- **Navigate faster** — citations link directly to the relevant section, not just the file
+- **Build trust** — your team knows exactly where the AI's answers come from
+- **Stay in context** — Citation Cards keep your investigation inside the chat without cluttering the main thread
+
+---
+
+## Related
+
+- [Cards & Artifacts](/features/cards) — AI-generated documents and lists
+- [File Uploads](/features/file-uploads) — attach files that generate citations
+- [SharePoint Integration](/features/sharepoint) — connect your document library
+- [Workspaces](/features/workspaces) — shared project context with team citations

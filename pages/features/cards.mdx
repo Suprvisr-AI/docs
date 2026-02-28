@@ -1,0 +1,94 @@
+---
+title: Cards & Artifacts
+description: AI-generated documents and lists that persist alongside your conversations.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Cards & Artifacts
+
+When Suprvisr generates a structured piece of content — a document, a report, a list — it saves it as a **Card**. Cards live in a dedicated panel alongside your conversation so you can reference, search, and manage them separately from the chat.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Cards panel overview</div>
+  <div className="gif-placeholder-label">GIF placeholder — opening cards panel, viewing and managing cards</div>
+</div>
+
+---
+
+## What are cards?
+
+Cards are AI-generated artifacts that Suprvisr automatically detects and saves when your conversation produces something worth keeping:
+
+| Card type | Examples |
+|---|---|
+| **Document** | Reports, specs, summaries, emails, proposals |
+| **List** | Bullet-point breakdowns, checklists, comparison tables |
+
+Cards appear inline below the assistant's message **and** in the Cards panel on the right side of the screen.
+
+---
+
+## Opening the Cards panel
+
+Click the **Layers icon** (top-right of the chat area) to open or close the Cards panel. The panel shows all cards for the current conversation.
+
+---
+
+## Using cards
+
+<Steps>
+
+### Ask the AI to create structured content
+
+Prompts like "write a report on X", "summarize this as a document", or "create a checklist for Y" naturally produce cards.
+
+### View the card inline
+
+A compact card preview appears below the AI's message. Click it to expand and view the full content.
+
+### Open the Cards panel
+
+Click the Layers icon to see all cards for the session in a searchable list.
+
+### Navigate to a card
+
+Click any card in the panel to jump to the message where it was generated.
+
+</Steps>
+
+---
+
+## Managing cards
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Pin, search, and delete cards</div>
+  <div className="gif-placeholder-label">GIF placeholder — card management actions</div>
+</div>
+
+### Pinning cards
+
+Hover over any card in the panel to reveal the **pin icon**. Pinned cards appear at the top of the panel under a "Pinned" section — useful for the most important outputs from a session.
+
+### Searching cards
+
+Use the **search bar** at the top of the Cards panel to filter by title. Helpful when a session generates many cards.
+
+### Deleting cards
+
+Hover over a card and click the **trash icon**. A confirmation dialog appears before the card is permanently deleted.
+
+---
+
+<Callout type="info">
+  Cards are session-specific — each conversation has its own set of cards. Switching to a different conversation shows that conversation's cards.
+</Callout>
+
+---
+
+## Related
+
+- [AI Chat](/features/ai-chat) — how to prompt the AI to generate cards
+- [Conversations](/features/conversations) — managing your chat sessions

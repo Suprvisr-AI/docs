@@ -1,0 +1,90 @@
+---
+title: Reasoning & Verbosity
+description: Multi-level reasoning for deeper answers, and verbosity modes to control response length and depth.
+---
+
+import { Callout } from 'nextra/components'
+
+# Reasoning & Verbosity
+
+Suprvisr's upgraded language model supports **multi-level reasoning** — it can think more deeply, source more documentation, and build responses you can act on with greater confidence. Alongside this, **verbosity modes** let you decide how much depth you want: a quick summary or a thorough, detailed response.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Reasoning in action</div>
+  <div className="gif-placeholder-label">GIF placeholder — AI working through a complex question with visible reasoning steps</div>
+</div>
+
+---
+
+## Multi-level reasoning
+
+When you ask a complex question, Suprvisr doesn't just jump to an answer. With multi-level reasoning enabled, the AI:
+
+1. **Breaks down the problem** — identifies what it needs to answer fully
+2. **Sources documentation** — pulls from your connected data sources and internal knowledge
+3. **Builds step-by-step** — constructs the answer in layers, checking each step
+4. **Surfaces its work** — you can see the reasoning process as it happens (in the Thinking panel)
+
+This is especially useful for:
+
+- Complex analytical questions
+- Multi-step technical problems
+- Answers that require reconciling multiple documents
+- High-stakes decisions where you need to understand the reasoning, not just the conclusion
+
+<Callout type="tip">
+  For simple questions, reasoning adds overhead. Save deeper reasoning for questions where accuracy and thoroughness really matter.
+</Callout>
+
+---
+
+## Verbosity modes
+
+Verbosity controls **how long and detailed** the AI's response is.
+
+| Mode | Best for | What you get |
+|---|---|---|
+| **Quick** | Fast answers, simple questions | Short, direct, no fluff |
+| **Balanced** | Most everyday use | Clear answer with enough context |
+| **Verbose** | Deep research, complex topics | Long, thorough, fully explained |
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Switching verbosity modes</div>
+  <div className="gif-placeholder-label">GIF placeholder — toggling between Quick, Balanced, and Verbose, same question different output</div>
+</div>
+
+### Quick mode
+
+Gets out of the way. No lengthy preambles, no restating the question, no caveats — just the answer. Ideal when you know what you're asking and need a fast response.
+
+### Balanced mode
+
+The default. Provides a direct answer with enough surrounding context to be useful and actionable.
+
+### Verbose mode
+
+For when you need the full picture. Long-form, well-structured responses that explain reasoning, cover edge cases, and cite sources. Use this for research, reports, or any output you'll share with others.
+
+---
+
+## Reasoning visibility
+
+Regardless of verbosity mode, you can always see the AI's reasoning in the **Thinking panel** during generation. This shows:
+
+- What the AI is working through
+- What sources it's pulling from
+- Observation results from tool calls
+
+<Callout type="info">
+  Reasoning visibility helps you catch errors early — if the AI is reasoning from a wrong assumption, you can stop it and redirect before it finishes.
+</Callout>
+
+---
+
+## Related
+
+- [AI Chat](/features/ai-chat) — the main chat interface
+- [Citations](/features/citations) — see sources used in deep-reasoning responses
+- [Prompt Strategies](/guides/prompt-strategies) — how to ask questions that get the best answers

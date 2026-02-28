@@ -1,0 +1,111 @@
+---
+title: Branding & Prompts
+description: Custom prompts, admin-wide tone settings, and a personal Assistant creator — make Suprvisr work your way.
+---
+
+import { Callout, Steps, Tabs } from 'nextra/components'
+
+# Branding & Prompts
+
+Suprvisr gives you control over how the AI communicates — at the individual level with custom prompts, and at the organization level with brand-wide tone, voice, and values settings. Admins can also create and distribute custom **Assistants** that anyone on the team can use.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Custom prompts and Assistants</div>
+  <div className="gif-placeholder-label">GIF placeholder — creating a custom prompt, using an org-wide Assistant</div>
+</div>
+
+---
+
+## Custom Prompts (User)
+
+Users can create their own **custom prompts** — reusable instructions or context snippets that can be applied to conversations.
+
+<Steps>
+
+### Open Prompts in Settings
+
+Go to **Settings → Personalization → Assistants & Prompts**.
+
+### Create a custom prompt
+
+Click **+ New Prompt** and write a reusable instruction. Examples:
+- "Always respond in bullet points with a summary at the top"
+- "Use a friendly, casual tone without jargon"
+- "Assume I have a technical background — skip basic explanations"
+
+### Apply in chat
+
+Select your custom prompt when starting or during a conversation to add it to your context.
+
+</Steps>
+
+<Callout type="tip">
+  Custom prompts are great for recurring tasks — like "always format this as a project spec" or "respond as if you're advising a non-technical stakeholder."
+</Callout>
+
+---
+
+## Organization Prompts (Admin)
+
+Admins can set **organization-wide prompt adjustments** that apply to every conversation across the team. These sweeping settings shape the AI's tone and approach to reflect your company's identity.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Admin org-wide prompt settings</div>
+  <div className="gif-placeholder-label">GIF placeholder — admin setting company values, tone, branding context</div>
+</div>
+
+What admins can configure:
+
+| Setting | Example |
+|---|---|
+| **Company values** | "We prioritize customer outcomes over speed" |
+| **Brand voice** | "Professional but approachable, never stiff" |
+| **Tone guidelines** | "Avoid corporate jargon, write like a human" |
+| **Context** | "We're a Canadian B2B SaaS company serving mid-market clients" |
+
+These settings apply as a baseline to all AI conversations in your organization — individual users can still layer their own custom prompts on top.
+
+---
+
+## Assistant Creator
+
+Build and share **custom Assistants** — AI personas tuned for specific roles, tasks, or workflows.
+
+<Tabs items={['For Users', 'For Admins']}>
+  <Tabs.Tab>
+    Any user can create a personal Assistant:
+
+    - Give it a name and description
+    - Define its role and expertise
+    - Set a default tone and format
+    - Share it with teammates so they can use it too
+
+    Examples: a "Legal Reviewer", a "Sprint Planner", a "Client Pitch Writer".
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Admins can create, curate, and distribute Assistants to the entire organization:
+
+    - Build Assistants aligned to specific team functions (Sales, Engineering, HR)
+    - Review and approve user-submitted Assistants before org-wide distribution
+    - Set an Assistant as the **default** for new users
+    - Retire or update Assistants as workflows evolve
+
+    Org-wide Assistants appear in every team member's Assistant list automatically.
+  </Tabs.Tab>
+</Tabs>
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Creating and using an Assistant</div>
+  <div className="gif-placeholder-label">GIF placeholder — building an Assistant, sharing it, teammate using it in a chat</div>
+</div>
+
+---
+
+## Related
+
+- [Personalization](/features/personalization) — personal name, role, and theme settings
+- [AI Chat](/features/ai-chat) — how to get the best responses
+- [Admin Setup](/guides/admin-setup) — managing organization-level settings

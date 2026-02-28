@@ -1,0 +1,98 @@
+---
+title: Getting AI-Ready
+description: How to structure your data and workflows so Suprvisr AI can help you most effectively.
+---
+
+import { Callout } from 'nextra/components'
+
+# Getting AI-Ready
+
+AI assistants like Suprvisr are most helpful when you give them the right inputs. This guide explains how to think about working with AI to maximize its usefulness.
+
+---
+
+## The AI works with what you give it
+
+Unlike a search engine, Suprvisr AI doesn't know about your internal systems, documents, or context unless you share it. Think of it as a highly capable colleague who just joined your team — brilliant, but needs context to help.
+
+**What helps:**
+- Pasting relevant text, code, or data directly into the chat
+- Describing your situation with enough background
+- Specifying your goal and constraints
+
+**What doesn't help:**
+- Vague references to things the AI can't see ("fix that bug from last week")
+- Assuming the AI knows your company's processes or naming conventions
+- One-word questions without context
+
+---
+
+## Structuring information for AI
+
+### For code questions
+
+Include:
+- The code snippet (or the relevant portion)
+- What you expected to happen
+- What actually happened
+- Any error messages
+
+```
+Here's a function that's not working as expected:
+
+[paste code]
+
+Expected: X
+Actual: Y
+Error: [paste error message]
+```
+
+### For writing tasks
+
+Include:
+- The format/type of content (email, spec, summary, etc.)
+- The audience (client, executive, developer, etc.)
+- The tone (formal, casual, concise, detailed)
+- Any constraints (length, must include X, avoid Y)
+
+### For decisions or analysis
+
+Include:
+- The options you're considering
+- Your constraints (time, budget, team size, etc.)
+- What matters most (speed, cost, quality, etc.)
+
+---
+
+## Iterating with the AI
+
+The first response is rarely the final one. Use follow-ups to refine:
+
+- **"Make it shorter"** — compress the response
+- **"Add more detail about X"** — expand a specific part
+- **"Rewrite in a more formal tone"** — adjust style
+- **"Give me 3 alternatives"** — explore options
+
+<Callout type="tip">
+  Think of it as a draft process, not a one-shot answer. The AI is at its best when you're collaborating with it, not just querying it.
+</Callout>
+
+---
+
+## What AI is good at (and not)
+
+| Good at | Not good at |
+|---|---|
+| Drafting, editing, summarizing | Real-time information (news, prices, live data) |
+| Explaining concepts | Accessing your internal systems |
+| Generating options and alternatives | Guaranteed accuracy on highly specific facts |
+| Rewriting in different styles | Knowing your undocumented conventions |
+| Pattern recognition in text/code | Tasks requiring human judgment or empathy |
+
+---
+
+## Related
+
+- [Prompt Strategies](/guides/prompt-strategies)
+- [Your First Chat](/getting-started/your-first-chat)
+- [AI Chat Features](/features/ai-chat)

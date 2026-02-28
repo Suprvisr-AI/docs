@@ -1,0 +1,109 @@
+---
+title: Prompt Strategies
+description: Proven techniques for writing prompts that get consistently great answers from Suprvisr AI.
+---
+
+import { Callout } from 'nextra/components'
+
+# Prompt Strategies
+
+The quality of your prompts directly affects the quality of AI responses. These strategies will help you get better answers, faster.
+
+---
+
+## The anatomy of a good prompt
+
+A strong prompt usually includes:
+
+1. **Role or context** — Who is asking, or what role should the AI play?
+2. **Task** — What do you want the AI to do?
+3. **Context** — What background information does the AI need?
+4. **Format** — How should the answer be structured?
+5. **Constraints** — What limitations or requirements apply?
+
+Not every prompt needs all five, but including more of these elements generally produces better results.
+
+---
+
+## Strategy 1: Be specific about format
+
+Tell the AI how you want the answer structured.
+
+❌ "Explain microservices"
+✅ "Explain microservices in 3 bullet points, aimed at a non-technical executive"
+
+❌ "Write an email"
+✅ "Write a 3-paragraph follow-up email to a client who hasn't responded to a proposal in 2 weeks. Friendly but professional tone."
+
+---
+
+## Strategy 2: Give the AI a role
+
+Framing the AI as an expert often improves the quality of responses.
+
+- "Act as a senior TypeScript developer and review this code..."
+- "You are an experienced product manager. Help me write a PRD for..."
+- "As a UX designer, what would you change about this flow?"
+
+---
+
+## Strategy 3: Use examples
+
+If you have an example of the output you want, share it.
+
+"Write a feature announcement in the same style as this one: [paste example]"
+
+---
+
+## Strategy 4: Ask for options
+
+When you're not sure of the best approach, ask for multiple:
+
+"Give me 3 different ways to structure this API endpoint, with pros and cons of each."
+
+---
+
+## Strategy 5: Break complex tasks into steps
+
+For complicated requests, guide the AI step by step.
+
+Instead of: "Help me plan a product launch"
+
+Try:
+1. "List 10 tasks needed for a B2B SaaS product launch"
+2. "Now group these into phases: pre-launch, launch day, post-launch"
+3. "Draft a checklist for the pre-launch phase"
+
+---
+
+## Strategy 6: Use follow-ups to refine
+
+The first answer is a starting point, not the final output.
+
+- "That's good. Now make it 50% shorter."
+- "Rewrite the third paragraph to be more persuasive."
+- "Add a section about edge cases."
+
+<Callout type="tip">
+  **Treat the AI like a junior colleague**: Be specific about what you need, give feedback on the first draft, and iterate until it's right.
+</Callout>
+
+---
+
+## Common mistakes
+
+| Mistake | Fix |
+|---|---|
+| Too vague | Add context, constraints, and desired format |
+| Asking multiple unrelated questions at once | One focused question per message |
+| Not iterating | Follow up to refine the response |
+| Expecting perfect output first try | Plan to edit and iterate |
+| Not providing relevant context | Paste the code, text, or data you're asking about |
+
+---
+
+## Related
+
+- [Getting AI-Ready](/guides/getting-ai-ready)
+- [Your First Chat](/getting-started/your-first-chat)
+- [AI Chat](/features/ai-chat)

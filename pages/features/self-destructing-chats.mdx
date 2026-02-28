@@ -1,0 +1,105 @@
+---
+title: Self-Destructing Chats
+description: Admin-controlled private chat mode — conversations that aren't stored in history unless the user chooses to save them.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Self-Destructing Chats
+
+Self-Destructing Chats give your team a private space to ask questions without those conversations being stored in their permanent chat history. It's an **admin-controlled feature** — off by default — that organizations can enable to give employees a more personal, low-visibility way to use AI at work.
+
+<div className="gif-placeholder">
+  <div className="gif-placeholder-icon">🎬</div>
+  <div className="gif-placeholder-title">Self-destructing chat flow</div>
+  <div className="gif-placeholder-label">GIF placeholder — clicking the timer icon, chatting, session not appearing in history</div>
+</div>
+
+---
+
+## How it works
+
+When a user starts a self-destructing chat:
+
+1. They click the **Timer icon** beside the new chat button
+2. The chat opens in a private mode — indicated visually
+3. The conversation happens normally with the AI
+4. When the session ends, the chat is **not added to their history**
+5. If they want to keep it, they can click **Save** before closing
+
+<Callout type="info">
+  Self-destructing chats are **not used to train or improve Suprvisr's models**. Some basic safety visibility is retained by the platform, but content is not stored for your team's access.
+</Callout>
+
+---
+
+## Who can enable this feature?
+
+Self-Destructing Chats are **off by default** for all organizations. Administrators can enable it:
+
+<Steps>
+
+### Go to Settings → Organization
+
+Click the **Settings** (gear icon) → select the **Organization** tab.
+
+### Find Self-Destructing Chats
+
+Under the Admin Controls section, locate the Self-Destructing Chats toggle.
+
+### Enable for your org
+
+Turn it on. Team members will now see the Timer icon next to the new chat button.
+
+</Steps>
+
+<Callout type="tip">
+  This feature is valuable for organizations where employees might hesitate to ask sensitive or personal questions at work. Giving them a private mode can increase genuine AI adoption.
+</Callout>
+
+---
+
+## What gets saved vs. what doesn't
+
+| Item | Self-destructing chat | Regular chat |
+|---|---|---|
+| Conversation content | Not saved (unless user saves) | Saved to history |
+| Visible to admin | No (basic safety only) | Usage patterns visible |
+| Used for AI training | No | No |
+| Appears in Dashboard | No | Yes |
+| User can save manually | Yes | Always saved |
+
+---
+
+## For users: starting a private chat
+
+<Steps>
+
+### Look for the Timer icon
+
+It appears beside the **+ New Chat** button in the top-left sidebar (only if your admin has enabled this feature).
+
+### Click the Timer icon
+
+A new chat opens in private mode.
+
+### Chat normally
+
+Ask what you need. The AI responds exactly as it would in a regular chat.
+
+### End the session
+
+Close or navigate away — the chat will not appear in your history.
+
+### Save if needed
+
+If you want to keep the conversation, click **Save** before closing.
+
+</Steps>
+
+---
+
+## Related
+
+- [Dashboards](/features/dashboards) — usage visibility for users and admins
+- [Admin Setup](/guides/admin-setup) — organization controls and permissions

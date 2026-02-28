@@ -1,0 +1,56 @@
+/* Suprvisr Help Center — Brand & Global Styles */
+
+:root {
+  /* Coral orange — Nextra primary color override */
+  --nextra-primary-hue: 11;
+  --nextra-primary-saturation: 100%;
+
+  /* Brand tokens */
+  --brand-primary: #FF6B4A;
+  --brand-primary-hover: #FF5533;
+  --brand-primary-light: #FFEDE9;
+}
+
+/* GIF placeholder component */
+.gif-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #fff8f6 0%, #ffe8e2 100%);
+  border: 2px dashed #FF6B4A;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.75rem 0;
+  color: #FF6B4A;
+  gap: 0.5rem;
+  min-height: 180px;
+  transition: background 0.2s;
+}
+
+.dark .gif-placeholder {
+  background: linear-gradient(135deg, #2a1a15 0%, #3d2520 100%);
+  border-color: #FF7F5C;
+  color: #FF7F5C;
+}
+
+.gif-placeholder-icon {
+  font-size: 2.25rem;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+.gif-placeholder-title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+}
+
+.gif-placeholder-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.6;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
