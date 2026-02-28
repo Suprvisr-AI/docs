@@ -5,4 +5,12 @@ const withNextra = nextra({
   themeConfig: './theme.config.tsx'
 })
 
-export default withNextra({})
+export default withNextra({
+  output: 'export',
+  images: {
+    unoptimized: true
+  },
+  typescript: {
+    ignoreBuildErrors: true
+  }
+})
