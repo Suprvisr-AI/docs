@@ -1,5 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { AuthWidget } from '@/components/AuthWidget'
 
 const config: DocsThemeConfig = {
   logo: React.createElement('img', {
@@ -35,6 +36,9 @@ const config: DocsThemeConfig = {
     React.createElement('link', { rel: 'apple-touch-icon', href: '/favicon_io/apple-touch-icon.png' }),
     React.createElement('meta', { name: 'description', content: 'Documentation, guides, and support for Suprvisr AI.' })
   ),
+  navbar: {
+    extraContent: React.createElement(AuthWidget)
+  },
   footer: { component: null },
   sidebar: { defaultMenuCollapseLevel: 1 }
 }
