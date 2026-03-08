@@ -5,8 +5,6 @@ export default {
     title: 'Core AI'
   },
   'ai-chat': 'AI Chat',
-  'reasoning-verbosity': 'Reasoning & Verbosity',
-  dictate: 'Dictate',
   '-- Workspace': {
     type: 'separator',
     title: 'Workspace'
@@ -26,7 +24,6 @@ export default {
     title: 'Customization'
   },
   personalization: 'Personalization',
-  'branding-prompts': 'Branding & Prompts',
   '-- Admin': {
     type: 'separator',
     title: 'Admin'
