@@ -7,13 +7,11 @@ import { Callout, Steps } from 'nextra/components'
 
 # SharePoint Integration
 
-Connect Suprvisr to your Microsoft SharePoint document libraries. Once connected, the AI can reference, search, and answer questions about your organization's documents directly — no manual uploads required.
+Connect Suprvisr to your Microsoft SharePoint document libraries. Once connected, the AI can search, reference, and answer questions about your organisation's documents directly — no manual uploads required.
 
-<div className="gif-placeholder">
-  <div className="gif-placeholder-icon">🎬</div>
-  <div className="gif-placeholder-title">SharePoint connection flow</div>
-  <div className="gif-placeholder-label">GIF placeholder — connecting a SharePoint site, selecting a library, sync status</div>
-</div>
+<Callout type="warning">
+  SharePoint integration requires a **Microsoft 365 account**. Users signed in with an email and password cannot connect SharePoint.
+</Callout>
 
 ---
 
@@ -23,32 +21,64 @@ With SharePoint connected, Suprvisr can:
 
 - **Search your documents** for relevant information when you ask a question
 - **Reference specific files** without you having to upload them manually
-- **Show sources** — when the AI uses a SharePoint document, it shows the source alongside the response
-- **Stay in sync** — your document library is periodically synced so the AI has fresh content
+- **Show sources** — when the AI uses a SharePoint document, it cites the source alongside the response
+- **Stay in sync** — connected libraries are periodically synced so the AI has fresh content
 
 ---
 
 ## Setting up SharePoint
 
+<Callout type="info">
+  Only **Admins** and **Owners** can connect SharePoint libraries.
+</Callout>
+
 <Steps>
 
-### Go to Settings → Integrations
+### Go to Settings → SharePoint
 
-Click **Settings** (gear icon) → select the **Integrations** tab → click **SharePoint**.
+Click **Settings** (gear icon) in the sidebar and select **SharePoint**.
 
-### Connect your site
+### Grant admin consent
 
-Click **Add Connection** and authenticate with your Microsoft account. Grant the required permissions to access your SharePoint sites.
+Click **Add Connection**. You'll be redirected to Microsoft to approve the Suprvisr integration app for your organisation's Azure AD tenant. This is a one-time step — subsequent connections reuse the same consent.
+
+### Link your Microsoft account
+
+After consent, you'll be prompted to **Link Microsoft Account**. This signs you in with your personal Microsoft 365 account so Suprvisr can browse your SharePoint sites on your behalf.
+
+### Select a site
+
+The connection wizard opens at the **Sites** step. Browse or search your available SharePoint sites and click the one you want to connect.
 
 ### Select a document library
 
-Choose which SharePoint site and document library (drive) to sync. You can add multiple sites.
+Choose which **document library** (drive) within that site to sync. Each library becomes a separate connection.
 
-### Wait for the initial sync
+### Choose folders (optional)
 
-Suprvisr syncs your documents in the background. The sync status shows the last sync time and document count.
+Browse the folder tree within the library. You can:
+
+- **Select specific folders** to limit what gets indexed — only those folders are synced
+- **Toggle "subfolders"** on any selected folder to recursively include everything inside it
+- **Leave everything unselected** to sync the entire library
+
+Click **Connect Library** when ready. The connection is created and an initial sync starts automatically.
 
 </Steps>
+
+<Callout type="tip">
+  You can add multiple connections — one per document library. Repeat the wizard to add more from the same or different SharePoint sites.
+</Callout>
+
+---
+
+## Folder color auto-indexing
+
+Suprvisr can automatically include folders based on their **SharePoint folder colour tag**. Set your organisation's active colour in the SharePoint settings page — any folder tagged with that colour in SharePoint will be auto-indexed, even without being manually selected in the wizard.
+
+Auto-indexed folders are highlighted in green and labelled **auto** in the folder tree. This is useful for teams that already use colour-coded folders in SharePoint to mark project or departmental content.
+
+To disable auto-indexing, set the colour to **None**.
 
 ---
 
@@ -57,10 +87,13 @@ Suprvisr syncs your documents in the background. The sync status shows the last 
 | Status | Meaning |
 |---|---|
 | **Active** | Connected and syncing normally |
-| **Syncing** | Currently processing documents |
-| **Error** | Sync failed — check the error message |
+| **Indexing…** | Initial sync in progress — documents are being processed |
+| **Syncing…** | A manual or scheduled sync is running |
+| **Pending** | Waiting for admin consent to complete |
+| **Error** | Sync failed — check the error message on the connection card |
+| **Offline** | Connection has been disconnected |
 
-Click **Refresh** to manually trigger a sync at any time.
+Click the **sync icon** on any connection card to trigger a manual delta sync (changes since the last sync).
 
 ---
 
@@ -80,29 +113,23 @@ Once connected, just ask naturally — the AI searches your SharePoint content a
 
 ## Document sources
 
-When the AI references a SharePoint document, it shows the source in the response — including the site name and drive. This helps you verify information and navigate back to the original file.
-
-<div className="gif-placeholder">
-  <div className="gif-placeholder-icon">🎬</div>
-  <div className="gif-placeholder-title">SharePoint source citations</div>
-  <div className="gif-placeholder-label">GIF placeholder — AI response with SharePoint source shown</div>
-</div>
+When the AI references a SharePoint document, it shows the source in the response — including the site name and library. This helps you verify information and navigate back to the original file.
 
 ---
 
-## Disconnecting
+## Removing a connection
 
-To remove a SharePoint connection:
+To remove a SharePoint library:
 
-1. Go to **Settings → Integrations → SharePoint**
-2. Find the connected site
-3. Click **Disconnect**
+1. Go to **Settings → SharePoint**
+2. Find the connection card
+3. Click the **trash icon** and confirm
 
-The documents are removed from the AI's context immediately.
+The library's documents are removed from the AI's context immediately.
 
 ---
 
 ## Related
 
 - [File Uploads](/features/file-uploads) — manually attach files if you don't use SharePoint
-- [Admin Setup](/guides/admin-setup) — organization-level integration management
+- [Admin Setup](/guides/admin-setup) — organisation-level integration management
