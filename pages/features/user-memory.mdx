@@ -1,0 +1,94 @@
+---
+title: AI Memory
+description: Import and manage your personal AI context so Suprvisr knows who you are and how you work.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# AI Memory
+
+**What it does**: AI Memory lets you bring context from other AI assistants (ChatGPT, Claude, Gemini) into Suprvisr. Your memories are organized into three pools — identity, instructions, and knowledge — so the AI personalizes every response without you repeating yourself.
+
+---
+
+## How it works
+
+Memories are split into three categories with different retrieval strategies:
+
+| Pool | What it stores | How it's used |
+|------|---------------|---------------|
+| **Identity** | Name, role, company, location | Always included in every conversation |
+| **Instructions** | Tone preferences, format rules, "always/never" directives | Always included in every conversation |
+| **Knowledge** | Projects, tools, skills, workflows, technical context | Semantically matched to your current question (top 8 most relevant) |
+
+---
+
+## Importing memories
+
+<Steps>
+
+### Copy the export prompt
+
+After onboarding (or from Settings), the import dialog gives you a universal prompt. Click **Copy Prompt** to copy it.
+
+### Paste into your current AI
+
+Open ChatGPT, Claude, Gemini, or any other AI assistant and paste the prompt. It will output everything it knows about you.
+
+### Paste the result back
+
+Copy the AI's response and paste it into the import dialog in Suprvisr. Click **Import**.
+
+### Review the results
+
+Suprvisr automatically breaks large entries into individual facts, classifies each one, and skips duplicates. You'll see a summary of how many were imported.
+
+</Steps>
+
+---
+
+<Callout type="tip">
+  **Pro tip**: You can also add memories manually from **Settings → AI Memory**. Click **Add** and choose the category (identity, instruction, or knowledge).
+</Callout>
+
+<Callout type="info">
+  **Note**: Each user can store up to 200 memories. Identity and instruction memories are always sent to the AI. Knowledge memories are only included when they're relevant to your current question.
+</Callout>
+
+---
+
+## Managing memories
+
+Go to **Settings → AI Memory** to:
+
+- **View** all memories grouped by type (Identity, Instructions, Knowledge)
+- **Edit** any memory inline
+- **Delete** memories you no longer need
+- **Import** more memories at any time
+- **Add** individual memories manually
+
+---
+
+## Admin controls
+
+Organization admins can:
+
+- **Toggle AI Memory** on or off for the entire organization from Settings
+- **Per-workspace toggle**: Disable memory injection for specific workspaces in workspace settings
+
+---
+
+## Tips & gotchas
+
+- **One prompt fits all**: The same export prompt works for ChatGPT, Claude, Gemini, and any other AI — no platform-specific setup needed
+- **Deduplication**: If you import the same memories twice, duplicates are automatically skipped (cosine similarity > 0.95)
+- **Atomization**: Large multi-paragraph memories from ChatGPT are automatically broken into individual facts, each searchable on its own
+- **Privacy**: Memories are per-user and protected by row-level security — no one else in your org can see them
+
+---
+
+## Related
+
+- [Personalization](/features/personalization)
+- [Workspaces](/features/workspaces)
+- [AI Chat](/features/ai-chat)

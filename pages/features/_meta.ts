@@ -24,6 +24,7 @@ export default {
     title: 'Customization'
   },
   personalization: 'Personalization',
+  'user-memory': 'AI Memory',
   '-- Admin': {
     type: 'separator',
     title: 'Admin'
