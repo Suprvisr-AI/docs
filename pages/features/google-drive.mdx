@@ -1,13 +1,13 @@
 ---
 title: Google Drive Integration
-description: Connect Google Drive so Suprvisr AI can search and reference your documents with per-user permission enforcement.
+description: Connect Google Drive so Cumulus can search and reference your documents with per-user permission enforcement.
 ---
 
 import { Callout, Steps } from 'nextra/components'
 
 # Google Drive Integration
 
-Connect Suprvisr to your Google Drive shared drives or personal drives. Once connected, the AI can search and reference your organisation's documents — and results are filtered by each user's actual Google Drive permissions.
+Connect Cumulus to your Google Drive shared drives or personal drives. Once connected, the AI can search and reference your organisation's documents — and results are filtered by each user's actual Google Drive permissions.
 
 <Callout type="info">
   Google Drive integration requires a **Google Workspace account** (e.g. you@yourcompany.com). Personal Gmail accounts are not supported for initial setup, but team members can connect personal drives if enabled by an admin.
@@ -17,7 +17,7 @@ Connect Suprvisr to your Google Drive shared drives or personal drives. Once con
 
 ## What it does
 
-With Google Drive connected, Suprvisr can:
+With Google Drive connected, Cumulus can:
 
 - **Search your documents** using semantic similarity when you ask a question
 - **Enforce per-user permissions** — only files you can access in Google Drive appear in results
@@ -40,7 +40,7 @@ Click **Settings** (gear icon) in the sidebar and select **Google Drive**.
 
 ### Authenticate with Google
 
-Click **Connect Google Drive**. You'll be redirected to Google to grant Suprvisr read-only access to your drives.
+Click **Connect Google Drive**. You'll be redirected to Google to grant Cumulus read-only access to your drives.
 
 ### Select a drive
 
@@ -52,7 +52,7 @@ Select specific folders to index, or skip to index the entire drive. Toggle **su
 
 ### Confirm and start syncing
 
-Review your selection and click **Connect**. Suprvisr begins indexing your documents immediately.
+Review your selection and click **Connect**. Cumulus begins indexing your documents immediately.
 
 </Steps>
 
@@ -88,8 +88,8 @@ Team members will see a **Connect My Drive** option in **Settings → Integratio
 
 Unlike some integrations that return all indexed results, Google Drive search enforces per-user permissions on every query:
 
-1. Suprvisr finds relevant document chunks using semantic search
-2. For each unique file, Suprvisr calls the Google Drive API with **your** access token
+1. Cumulus finds relevant document chunks using semantic search
+2. For each unique file, Cumulus calls the Google Drive API with **your** access token
 3. Only files you can actually access in Google Drive are included in the response
 
 This means:
