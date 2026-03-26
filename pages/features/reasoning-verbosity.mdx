@@ -1,85 +1,53 @@
 ---
 title: Reasoning & Verbosity
-description: Multi-level reasoning for deeper answers, and verbosity modes to control response length and depth.
+description: Control how deeply the AI reasons before responding — from fast answers to deep analysis.
 ---
 
 import { Callout } from 'nextra/components'
 
-# Reasoning & Verbosity
+# Reasoning
 
-Suprvisr's upgraded language model supports **multi-level reasoning** — it can think more deeply, source more documentation, and build responses you can act on with greater confidence. Alongside this, **verbosity modes** let you decide how much depth you want: a quick summary or a thorough, detailed response.
-
-<div className="gif-placeholder">
-  <div className="gif-placeholder-icon">🎬</div>
-  <div className="gif-placeholder-title">Reasoning in action</div>
-  <div className="gif-placeholder-label">GIF placeholder — AI working through a complex question with visible reasoning steps</div>
-</div>
+Suprvisr lets you control how deeply the AI thinks before responding. Choose a reasoning level to balance speed against thoroughness — from instant answers to multi-step analysis.
 
 ---
 
-## Multi-level reasoning
+## Reasoning levels
 
-When you ask a complex question, Suprvisr doesn't just jump to an answer. With multi-level reasoning enabled, the AI:
+Click the **sliders icon** in the bottom-right of the chat input to open the settings panel. Under **Reasoning**, choose a level:
 
-1. **Breaks down the problem** — identifies what it needs to answer fully
-2. **Sources documentation** — pulls from your connected data sources and internal knowledge
-3. **Builds step-by-step** — constructs the answer in layers, checking each step
-4. **Surfaces its work** — you can see the reasoning process as it happens (in the Thinking panel)
+| Level | Description | Best for |
+|-------|-------------|----------|
+| **Minimal** | Faster responses | Quick questions, simple lookups, casual conversation |
+| **Low** | Some reasoning | Everyday tasks, drafting, summarizing |
+| **Medium** | Balanced depth | Multi-step problems, analysis, research |
+| **High** | Deeper analysis | Complex technical questions, strategic decisions, reconciling multiple sources |
 
-This is especially useful for:
+Your selection applies to the next message you send. The panel closes automatically after you choose.
 
-- Complex analytical questions
-- Multi-step technical problems
-- Answers that require reconciling multiple documents
-- High-stakes decisions where you need to understand the reasoning, not just the conclusion
-
-<Callout type="tip">
-  For simple questions, reasoning adds overhead. Save deeper reasoning for questions where accuracy and thoroughness really matter.
+<Callout type="info">
+  The default is **Minimal**. The AI still provides thoughtful answers at this level — higher settings add explicit step-by-step reasoning before the response.
 </Callout>
 
 ---
 
-## Verbosity modes
+## When to increase reasoning
 
-Verbosity controls **how long and detailed** the AI's response is.
+Higher reasoning levels are most useful when:
 
-| Mode | Best for | What you get |
-|---|---|---|
-| **Quick** | Fast answers, simple questions | Short, direct, no fluff |
-| **Balanced** | Most everyday use | Clear answer with enough context |
-| **Verbose** | Deep research, complex topics | Long, thorough, fully explained |
+- The question requires **reconciling multiple documents** or data sources
+- You need the AI to **show its work** — visible reasoning steps in the thinking panel
+- The problem has **multiple valid approaches** and you want the AI to evaluate trade-offs
+- Accuracy matters more than speed
 
-<div className="gif-placeholder">
-  <div className="gif-placeholder-icon">🎬</div>
-  <div className="gif-placeholder-title">Switching verbosity modes</div>
-  <div className="gif-placeholder-label">GIF placeholder — toggling between Quick, Balanced, and Verbose, same question different output</div>
-</div>
-
-### Quick mode
-
-Gets out of the way. No lengthy preambles, no restating the question, no caveats — just the answer. Ideal when you know what you're asking and need a fast response.
-
-### Balanced mode
-
-The default. Provides a direct answer with enough surrounding context to be useful and actionable.
-
-### Verbose mode
-
-For when you need the full picture. Long-form, well-structured responses that explain reasoning, cover edge cases, and cite sources. Use this for research, reports, or any output you'll share with others.
+<Callout type="tip">
+  For simple questions ("What's our refund policy?"), Minimal is best. For complex questions ("Compare our Q3 and Q4 results and recommend budget adjustments"), try Medium or High.
+</Callout>
 
 ---
 
 ## Reasoning visibility
 
-Regardless of verbosity mode, you can always see the AI's reasoning in the **Thinking panel** during generation. This shows:
-
-- What the AI is working through
-- What sources it's pulling from
-- Observation results from tool calls
-
-<Callout type="info">
-  Reasoning visibility helps you catch errors early — if the AI is reasoning from a wrong assumption, you can stop it and redirect before it finishes.
-</Callout>
+Regardless of the level you choose, you can see the AI's reasoning process in the **thinking panel** during generation. This shows what the AI is working through, what sources it's pulling from, and tool call results as they happen.
 
 ---
 

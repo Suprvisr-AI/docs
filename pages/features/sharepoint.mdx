@@ -68,6 +68,10 @@ Click **Connect Library** when ready. The connection is created and an initial s
 
 </Steps>
 
+<Callout type="info">
+  **Member visibility**: Non-admin team members can see that SharePoint is connected and its status (e.g. "Active"), but cannot view connection details, folder selections, or sync progress. Only admins and owners have full access to the SharePoint settings page.
+</Callout>
+
 <Callout type="tip">
   You can add multiple connections — one per document library. Repeat the wizard to add more from the same or different SharePoint sites.
 </Callout>
@@ -84,18 +88,33 @@ To disable auto-indexing, set the colour to **None**.
 
 ---
 
-## Sync status
+## Sync progress
+
+Each connection shows real-time sync progress with file-level detail:
+
+| Metric | What it shows |
+|--------|---------------|
+| **Total files** | Number of files in the connected library |
+| **Completed** | Successfully indexed files |
+| **In progress** | Files currently being processed |
+| **Pending** | Files waiting to be processed |
+| **Failed** | Files that encountered errors during sync |
+| **Percent complete** | Overall progress bar |
+
+Expand any connection card to see individual file status — each file shows whether it's indexed, pending, processing, or failed, along with its chunk count and last sync time.
+
+Click the **sync icon** on any connection card to trigger a manual delta sync (changes since the last sync).
+
+### Connection status badges
 
 | Status | Meaning |
-|---|---|
+|--------|---------|
 | **Active** | Connected and syncing normally |
-| **Indexing…** | Initial sync in progress — documents are being processed |
-| **Syncing…** | A manual or scheduled sync is running |
+| **Indexing...** | Initial sync in progress — documents are being processed |
+| **Syncing...** | A manual or scheduled sync is running |
 | **Pending** | Waiting for admin consent to complete |
 | **Error** | Sync failed — check the error message on the connection card |
 | **Offline** | Connection has been disconnected |
-
-Click the **sync icon** on any connection card to trigger a manual delta sync (changes since the last sync).
 
 ---
 

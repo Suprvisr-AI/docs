@@ -1,0 +1,93 @@
+---
+title: Knowledge Base
+description: Upload documents so your team can search and chat with your content using AI.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# Knowledge Base
+
+**What it does**: Upload documents to your organization's knowledge base so the AI can search and reference them when answering questions. Supported formats include PDF, DOCX, XLSX, TXT, and Markdown files up to 50 MB each.
+
+---
+
+## How to use it
+
+<Steps>
+
+### Go to Settings → Knowledge Base
+
+Click **Settings** (gear icon) in the sidebar and select **Knowledge Base**.
+
+### Upload documents
+
+Click **Upload Document** or drag and drop files directly onto the page. Supported formats:
+
+| Format | Extension |
+|--------|-----------|
+| PDF | `.pdf` |
+| Word | `.docx` |
+| Excel | `.xlsx` |
+| Plain text | `.txt` |
+| Markdown | `.md` |
+
+### Wait for indexing
+
+Each document goes through processing stages:
+
+| Status | Meaning |
+|--------|---------|
+| **Processing** | Document is being read and chunked for AI search |
+| **Indexed** | Ready — the AI can now search and reference this document |
+| **Failed** | Something went wrong — check the error message and retry |
+
+### Start asking questions
+
+Once indexed, the AI automatically searches your knowledge base when relevant to your question. No special syntax needed — just ask naturally.
+
+</Steps>
+
+<Callout type="info">
+  The knowledge base is organization-wide. Documents uploaded here are searchable by all team members in your organization.
+</Callout>
+
+---
+
+## Managing documents
+
+The Knowledge Base page shows all uploaded documents in a table with:
+
+- **File name** and type icon
+- **Status** badge (Indexed, Processing, or Failed)
+- **File size**
+- **Chunks** — number of indexed segments (more chunks = more searchable content)
+- **Upload date**
+
+You can **search** by filename when you have more than a few documents, and **delete** any document by hovering over it and clicking the trash icon.
+
+<Callout type="tip">
+  If a document fails to process, check the error message. Common causes include corrupted files or unsupported content within an otherwise supported format. You can retry processing from the actions menu.
+</Callout>
+
+---
+
+## Knowledge Base vs. File Uploads vs. Workspace Sources
+
+| Feature | Scope | Where |
+|---------|-------|-------|
+| **Knowledge Base** | Organization-wide | Settings → Knowledge Base |
+| **File Uploads** | Single chat message | Drag into chat input |
+| **Workspace Sources** | Single workspace/project | Project → Sources tab |
+
+<Callout type="info">
+  For project-specific documents, consider uploading to a [Workspace](/features/workspaces) instead. Workspace sources give the AI focused context for that project without mixing in unrelated org-wide documents.
+</Callout>
+
+---
+
+## Related
+
+- [File Uploads](/features/file-uploads) — attach files to individual chat messages
+- [Workspaces](/features/workspaces) — project-level document management
+- [SharePoint Integration](/features/sharepoint) — auto-sync documents from SharePoint
+- [Google Drive Integration](/features/google-drive) — auto-sync from Google Drive

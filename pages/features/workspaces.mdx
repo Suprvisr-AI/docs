@@ -1,75 +1,108 @@
 ---
 title: Workspaces
-description: Build project folders, assign chats and documents as context, and collaborate with your team in a shared AI environment.
+description: Project folders with shared AI context — organize chats, upload documents, manage team members, and give the AI project-specific memory.
 ---
 
 import { Callout, Steps } from 'nextra/components'
 
 # Workspaces
 
-Workspaces let you organize your AI interactions around specific projects. Group related chats and documents together, invite teammates to collaborate, and chat with the AI in a shared, threaded context — everyone working from the same information.
+Workspaces let you organize your AI interactions around specific projects. Each workspace is a self-contained project folder with its own chats, documents, team members, and AI memory — so the AI always has the right context for the conversation.
 
 <img src="/gifs/features/workspaces-overview.gif" alt="Workspaces overview" style={{width: '100%', borderRadius: '8px'}} />
 
 ---
 
-## What is a Workspace?
-
-A Workspace is a project folder with a shared context. It contains:
-
-- **Chats** — threaded AI conversations relevant to the project
-- **Documents** — files and context assigned to the workspace
-- **Team members** — collaborators who share the same AI context
-- **Threaded discussions** — structured AI conversations scoped to the project
-
-Think of it as a project room where the AI already knows the background, and your team can pick up the conversation where anyone left off.
-
----
-
-## Creating a Workspace
+## Creating a workspace
 
 <Steps>
 
-### Open the Workspaces panel
+### Click + in the Projects section
 
-Navigate to **Workspaces** in the sidebar (or use the Workspaces icon).
+In the left sidebar, find the **Projects** section and click the **+** button.
 
-### Create a new workspace
+### Name your workspace
 
-Click **+ New Workspace** and give it a name — typically a project, client, or initiative.
-
-### Add context
-
-Assign existing chats, upload documents, or link files as context for this workspace. The AI uses this context when answering questions inside the workspace.
-
-### Invite collaborators
-
-Add team members by name or email. They'll see the workspace and can participate in threaded chats with the shared context.
+Type a name for your project and press **Enter**. You're taken directly to the new workspace dashboard.
 
 </Steps>
 
----
-
-## Threaded AI chat
-
-Inside a Workspace, conversations are threaded — meaning the AI maintains continuity across the whole team's input, not just your own messages. Multiple teammates can ask follow-up questions and the AI builds on the full shared context.
-
 <Callout type="tip">
-  Workspaces are ideal for: client projects, product launches, ongoing research, or any initiative where multiple people need shared AI context.
+  Name workspaces after projects, clients, or initiatives — e.g. "Q2 Product Launch", "Client: Acme Corp", "Engineering Sprint 14".
 </Callout>
 
 ---
 
-## Assigning documents as context
+## The workspace dashboard
 
-Documents assigned to a workspace become part of the shared knowledge base the AI draws from. You can assign:
+Each workspace has five tabs:
 
-- Uploaded files (PDFs, Word docs, spreadsheets)
-- SharePoint documents (if SharePoint is connected)
-- AI-generated Cards from previous chats
+### Overview
+
+Your project at a glance — name, description, quick stats (chats, sources, team members), a **New Chat** button, and previews of recent chats, sources, and team.
+
+Click the description area to edit it inline.
+
+### Chats
+
+All conversations within this workspace. Click any chat to continue it. Start a new one with the **New Chat** button — it automatically inherits the workspace context.
+
+### Sources
+
+Upload and manage project documents. The AI uses these as context when answering questions inside this workspace.
+
+<Steps>
+
+### Upload files
+
+Click **Upload** or drag and drop files onto the Sources tab. Supported formats:
+
+| Format | Extensions |
+|--------|-----------|
+| Documents | `.pdf`, `.docx`, `.txt`, `.md` |
+| Spreadsheets | `.csv`, `.xlsx`, `.xls` |
+| Images | `.png`, `.jpg`, `.gif`, `.webp` |
+
+Maximum file size: 100 MB.
+
+### Track processing status
+
+Each file shows its current status:
+
+| Status | Meaning |
+|--------|---------|
+| **Pending** | Queued for processing |
+| **Processing** | Being read and indexed |
+| **Indexed** | Ready — the AI can search this document |
+| **Failed** | Error occurred — use the retry button to reprocess |
+
+### Compare documents
+
+Select two files using the checkboxes, then click **Compare** to start an AI chat that analyzes both documents side by side.
+
+</Steps>
+
+### Team
+
+Manage who has access to this workspace.
+
+| Role | What they can do |
+|------|-----------------|
+| **Viewer** | Read chats and sources |
+| **Member** | Chat, upload files |
+| **Admin** | Manage members and settings |
+| **Owner** | Full control including transfer and deletion |
+
+Click **Add Member** to invite team members from your organization. Change roles or remove members from the member list.
+
+### Memory
+
+Give the AI persistent context about this project. Add notes, background information, or instructions that should apply to every conversation in this workspace.
+
+Type your context in the text area and click **Save**. The AI references this memory whenever someone chats inside the workspace.
 
 <Callout type="info">
-  The AI prioritizes workspace context when answering questions inside that workspace. This makes answers more relevant and specific to your project.
+  Workspace memory is separate from your personal [AI Memory](/features/user-memory). Both are used when chatting inside a workspace — personal memory for who you are, workspace memory for project context.
 </Callout>
 
 ---
@@ -77,6 +110,6 @@ Documents assigned to a workspace become part of the shared knowledge base the A
 ## Related
 
 - [Conversations](/features/conversations) — individual chat management
-- [Cards & Artifacts](/features/cards) — assign AI-generated outputs to a workspace
-- [File Uploads](/features/file-uploads) — add documents to your workspace context
-- [SharePoint Integration](/features/sharepoint) — connect your document library
+- [Knowledge Base](/features/knowledge-base) — organization-wide document uploads
+- [File Uploads](/features/file-uploads) — attach files to individual chat messages
+- [AI Memory](/features/user-memory) — personal AI context

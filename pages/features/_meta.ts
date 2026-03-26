@@ -5,6 +5,9 @@ export default {
     title: 'Core AI'
   },
   'ai-chat': 'AI Chat',
+  'reasoning-verbosity': 'Reasoning',
+  dictate: 'Dictate',
+  'image-generation': 'Image Generation',
   '-- Workspace': {
     type: 'separator',
     title: 'Workspace'
@@ -14,6 +17,7 @@ export default {
   cards: 'Cards & Artifacts',
   citations: 'Citations',
   'file-uploads': 'File Uploads',
+  'knowledge-base': 'Knowledge Base',
   '-- Integrations': {
     type: 'separator',
     title: 'Integrations'
@@ -26,6 +30,7 @@ export default {
   },
   personalization: 'Personalization',
   'user-memory': 'AI Memory',
+  'ai-personality': 'AI Personality',
   '-- Admin': {
     type: 'separator',
     title: 'Admin'

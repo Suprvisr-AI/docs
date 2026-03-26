@@ -9,41 +9,49 @@ A running log of new features, improvements, and fixes in Suprvisr AI.
 
 ---
 
-## Upcoming Features
-
-### Workspaces
-Build project folders with shared AI context. Assign chats and documents, invite teammates to collaborate, and chat with the AI in a threaded shared environment. → [Learn more](/features/workspaces)
-
-### Citations
-Every response that draws from your internal data will surface Citation Cards — showing exactly which document and section was used. Explore sources without leaving the chat. → [Learn more](/features/citations)
-
-### Dashboards
-User and Admin dashboards showing usage frequency, estimated time saved, and common query topics across your team. → [Learn more](/features/dashboards)
-
-### Self-Destructing Chats
-Admin-controlled private chat mode — conversations not saved to history unless the user saves them. Timer icon beside New Chat. Off by default, enabled in Org Settings. → [Learn more](/features/self-destructing-chats)
-
-### Branding & Prompts
-Custom prompts for users, org-wide tone and brand settings for admins, plus an Assistant creator to build and share custom AI personas. → [Learn more](/features/branding-prompts)
-
-### Reasoning & Verbosity
-Multi-level reasoning for deeper, more confident answers. Verbosity modes (Quick / Balanced / Verbose) to control response depth. → [Learn more](/features/reasoning-verbosity)
-
-### Dictate
-Speak your messages using the mic icon. Voice-to-text input for hands-free prompting. (Note: text-to-speech AI voice dialogue coming in a future update.) → [Learn more](/features/dictate)
-
----
-
 ## March 2026
 
+### Image Generation
+Ask the AI to generate images directly in chat. Images render inline with a lightbox view and download button. Each user gets a weekly generation quota — usage is tracked per image. → [Learn more](/features/image-generation)
+
+### Knowledge Base
+Upload documents (PDF, DOCX, XLSX, TXT, MD) to your organization's knowledge base from Settings. The AI automatically searches indexed documents when answering questions. Includes file status tracking, chunk counts, and search/delete management. → [Learn more](/features/knowledge-base)
+
+### AI Personality
+Admins can now shape the AI's tone and perspective for their organization. Configure two personality traits, a brand worldview, value proposition, and custom instructions — with a live preview that updates as you type. → [Learn more](/features/ai-personality)
+
+### Workspaces
+Project folders with shared AI context are now live. Each workspace has five tabs: Overview, Chats, Sources (file uploads with status tracking), Team (role-based access), and Memory (persistent project context). Create workspaces from the sidebar, upload documents, invite collaborators, and compare files. → [Learn more](/features/workspaces)
+
+### Reasoning Levels
+Control how deeply the AI thinks before responding. Four levels available via the settings panel in chat: Minimal (fast), Low (some reasoning), Medium (balanced), and High (deep analysis). → [Learn more](/features/reasoning-verbosity)
+
+### Dictate
+Voice-to-text input is now live. Click the mic icon in the chat input to start dictating — your words appear in the text field as you speak. Edit before sending, click again to stop. → [Learn more](/features/dictate)
+
+### Citations
+AI responses that draw from your internal data now include citation chips showing exactly which document and section was used. Click any citation to expand and read the source excerpt. → [Learn more](/features/citations)
+
+### Dashboards
+User and admin dashboards showing usage frequency, estimated time saved, common topics, and adoption rates. Admins get an organization-wide view with per-user breakdowns. → [Learn more](/features/dashboards)
+
+### Self-Destructing Chats
+Admin-controlled private chat mode is now available. Conversations are not saved to history unless the user chooses to save them. Enable from Settings → Organization. → [Learn more](/features/self-destructing-chats)
+
 ### Member Invitations
-Admins can now invite team members by email. New users receive a branded magic link to join directly — no need to sign up first. Existing Cumulus users are added automatically with an email notification. Pending invitations count toward the seat limit and can be resent or revoked from the Members page. → [Learn more](/features/member-invitations)
+Admins can invite team members by email. Invitees receive a branded email and land on an invitation page showing the org name and who invited them. New users go through onboarding automatically after accepting. Pending invitations can be resent or revoked. → [Learn more](/features/member-invitations)
 
 ### Google Drive Per-User Permissions & Personal Drives
-Google Drive search results are now filtered by each user's actual Google Drive permissions — only files you can access appear in AI responses. Admins can also enable a "Personal Drives" toggle, letting team members connect their own Google Drive for AI document search. → [Learn more](/features/google-drive)
+Google Drive search results are filtered by each user's actual Google Drive permissions. Admins can enable a "Personal Drives" toggle for team members. Sync now uses webhooks for faster content updates. → [Learn more](/features/google-drive)
+
+### SharePoint Sync Progress
+SharePoint connections now show real-time sync progress with file-level detail — including pending, processing, indexed, and failed counts. Non-admin members see connection status without exposing configuration details. → [Learn more](/features/sharepoint)
 
 ### AI Memory
-Import your AI context from ChatGPT, Claude, Gemini, or any other assistant. Memories are organized into three pools (identity, instructions, knowledge) with smart retrieval — identity and instructions are always applied, knowledge is semantically matched to your current question. Includes admin controls per org and per workspace. → [Learn more](/features/user-memory)
+Import your AI context from ChatGPT, Claude, Gemini, or any other assistant. Memories are organized into three pools (identity, instructions, knowledge) with smart retrieval. Includes admin controls per org and per workspace. → [Learn more](/features/user-memory)
+
+### Chat UI Improvements
+Inline mid-stream thinking indicators, full tool label coverage for all backend tools, and provisional chat sessions that update the sidebar instantly on send.
 
 ### Super Admin Dashboard
 

@@ -7,7 +7,7 @@ import { Callout, Steps } from 'nextra/components'
 
 # Member Invitations
 
-**What it does**: Admins and owners can invite new team members by email. New users receive a magic link to join directly, while existing users are added automatically with an email notification.
+**What it does**: Admins and owners can invite new team members by email. Invitees receive a branded email with a link to join your organization — they sign up (or log in) and are added automatically.
 
 ---
 
@@ -17,7 +17,7 @@ import { Callout, Steps } from 'nextra/components'
 
 ### Open the Members page
 
-Go to **Settings > Members** and click the **Invite Member** button in the top-right corner.
+Go to **Settings → Members** and click the **Invite Member** button in the top-right corner.
 
 ### Enter their email and role
 
@@ -30,21 +30,31 @@ Type the invitee's email address and choose a role:
 
 ### Send the invitation
 
-Click **Send Invitation**. The invitee will appear in the members list with a **Pending** badge.
+Click **Send Invitation**. The invitee appears in the members list with a **Pending** badge.
 
 </Steps>
 
 ---
 
-## What happens next
+## What the invitee experiences
 
 ### New users (no existing account)
 
-The invitee receives an email from **Cumulus by Suprvisr AI** with a **Get Started** button. Clicking the link creates their account and drops them directly into the onboarding flow as a member of your organization.
+1. They receive an email from **Cumulus by Suprvisr AI** with a **Get Started** button
+2. Clicking the link opens an invitation page showing your organization name and who invited them
+3. They click **Sign up or Log in to Accept**
+4. After creating their account, they're dropped directly into the 3-step onboarding flow (name, role, features tour) as a member of your organization
 
 ### Existing users
 
-If the email belongs to someone who already has a Cumulus account, they are added to your organization immediately. They receive a notification email and will see the new organization on their next login.
+1. They receive the same invitation email
+2. Clicking the link opens the invitation page
+3. They click **Sign up or Log in to Accept** and log in with their existing credentials
+4. They're added to your organization immediately and redirected to the app
+
+<Callout type="info">
+  If an invitee is already logged in when they click the invitation link, acceptance happens automatically — they're redirected straight to the app without an extra step.
+</Callout>
 
 ---
 
@@ -53,7 +63,7 @@ If the email belongs to someone who already has a Cumulus account, they are adde
 Pending invitations appear in the members list alongside active members. Admins can:
 
 - **Resend** an invitation if the link has expired or the invitee didn't receive it
-- **Revoke** an invitation to free up the seat immediately
+- **Revoke** an invitation to cancel it and free up the seat immediately
 
 Use the **...** menu on any pending invitation row to access these actions.
 
@@ -82,3 +92,4 @@ Use the **...** menu on any pending invitation row to access these actions.
 
 - [Workspaces](/features/workspaces)
 - [Personalization](/features/personalization)
+- [Admin Setup](/guides/admin-setup)

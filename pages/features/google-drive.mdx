@@ -1,0 +1,113 @@
+---
+title: Google Drive Integration
+description: Connect Google Drive so Suprvisr AI can search and reference your documents with per-user permission enforcement.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Google Drive Integration
+
+Connect Suprvisr to your Google Drive shared drives or personal drives. Once connected, the AI can search and reference your organisation's documents — and results are filtered by each user's actual Google Drive permissions.
+
+<Callout type="info">
+  Google Drive integration requires a **Google Workspace account** (e.g. you@yourcompany.com). Personal Gmail accounts are not supported for initial setup, but team members can connect personal drives if enabled by an admin.
+</Callout>
+
+---
+
+## What it does
+
+With Google Drive connected, Suprvisr can:
+
+- **Search your documents** using semantic similarity when you ask a question
+- **Enforce per-user permissions** — only files you can access in Google Drive appear in results
+- **Support shared and personal drives** — admins connect shared drives, users can optionally connect their own
+- **Stay in sync** — connected drives are synced via webhooks and periodic checks so the AI always has fresh content
+
+---
+
+## Setting up Google Drive (Admin)
+
+<Callout type="info">
+  Only **Admins** and **Owners** can connect shared drives.
+</Callout>
+
+<Steps>
+
+### Go to Settings → Google Drive
+
+Click **Settings** (gear icon) in the sidebar and select **Google Drive**.
+
+### Authenticate with Google
+
+Click **Connect Google Drive**. You'll be redirected to Google to grant Suprvisr read-only access to your drives.
+
+### Select a drive
+
+The connection wizard shows your available drives — **My Drive** and any **Shared Drives** you have access to. Click the drive you want to connect.
+
+### Choose folders (optional)
+
+Select specific folders to index, or skip to index the entire drive. Toggle **subfolders** to include nested content.
+
+### Confirm and start syncing
+
+Review your selection and click **Connect**. Suprvisr begins indexing your documents immediately.
+
+</Steps>
+
+<Callout type="info">
+  **Member visibility**: Non-admin team members can see that Google Drive is connected and its status, but cannot view connection details or manage connections. Only admins and owners have full access to the Google Drive settings page.
+</Callout>
+
+---
+
+## Enabling Personal Drives
+
+Admins can allow team members to connect their own personal Google Drive for AI search.
+
+<Steps>
+
+### Toggle "Allow Personal Drives"
+
+On the Google Drive settings page, enable the **Allow Personal Drives** toggle at the top of the page.
+
+### Users connect from Settings
+
+Team members will see a **Connect My Drive** option in **Settings → Integrations**. Clicking it creates a personal drive connection.
+
+</Steps>
+
+<Callout type="tip">
+  Personal drive documents are searchable by the user and any teammates who also have access in Google Drive. Permission checks happen on every search.
+</Callout>
+
+---
+
+## How permission enforcement works
+
+Unlike some integrations that return all indexed results, Google Drive search enforces per-user permissions on every query:
+
+1. Suprvisr finds relevant document chunks using semantic search
+2. For each unique file, Suprvisr calls the Google Drive API with **your** access token
+3. Only files you can actually access in Google Drive are included in the response
+
+This means:
+- Users without a Google account won't see the search tool at all (no errors, it simply isn't available)
+- If your Google token expires, you'll be prompted to re-authenticate
+- Shared drive documents respect the same access controls as Google Drive itself
+
+---
+
+## Tips & gotchas
+
+- **Connection scope badges**: Each connection on the admin page shows a "Shared Drive" or "Personal Drive" badge so you can tell them apart
+- **Non-Google users**: Team members who signed in with email/password can still view existing connections but cannot create new ones
+- **Token expiry**: If search results come back empty unexpectedly, try re-authenticating with Google from the settings page
+
+---
+
+## Related
+
+- [SharePoint Integration](/features/sharepoint)
+- [File Uploads](/features/file-uploads)
