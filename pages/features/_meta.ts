@@ -19,6 +19,7 @@ export default {
     title: 'Integrations'
   },
   sharepoint: 'SharePoint Integration',
+  'google-drive': 'Google Drive Integration',
   '-- Customization': {
     type: 'separator',
     title: 'Customization'
@@ -29,6 +30,7 @@ export default {
     type: 'separator',
     title: 'Admin'
   },
+  'member-invitations': 'Member Invitations',
   dashboards: 'Dashboards',
   'self-destructing-chats': 'Self-Destructing Chats',
   'feature-board': 'Feature Board'

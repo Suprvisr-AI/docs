@@ -1,0 +1,84 @@
+---
+title: Member Invitations
+description: Invite team members to your organization by email with role assignment and seat management.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Member Invitations
+
+**What it does**: Admins and owners can invite new team members by email. New users receive a magic link to join directly, while existing users are added automatically with an email notification.
+
+---
+
+## How to invite a member
+
+<Steps>
+
+### Open the Members page
+
+Go to **Settings > Members** and click the **Invite Member** button in the top-right corner.
+
+### Enter their email and role
+
+Type the invitee's email address and choose a role:
+
+| Role | Permissions |
+|------|------------|
+| **Member** | Can chat with AI, view shared content |
+| **Admin** | Full access including member management and integrations |
+
+### Send the invitation
+
+Click **Send Invitation**. The invitee will appear in the members list with a **Pending** badge.
+
+</Steps>
+
+---
+
+## What happens next
+
+### New users (no existing account)
+
+The invitee receives an email from **Cumulus by Suprvisr AI** with a **Get Started** button. Clicking the link creates their account and drops them directly into the onboarding flow as a member of your organization.
+
+### Existing users
+
+If the email belongs to someone who already has a Cumulus account, they are added to your organization immediately. They receive a notification email and will see the new organization on their next login.
+
+---
+
+## Managing invitations
+
+Pending invitations appear in the members list alongside active members. Admins can:
+
+- **Resend** an invitation if the link has expired or the invitee didn't receive it
+- **Revoke** an invitation to free up the seat immediately
+
+Use the **...** menu on any pending invitation row to access these actions.
+
+---
+
+<Callout type="warning">
+  **Invitation links expire after 24 hours.** If an invitee clicks an expired link, they'll see a message asking their admin to resend. Use the Resend action to generate a fresh link.
+</Callout>
+
+<Callout type="info">
+  **Pending invitations count toward your seat limit.** Each invitation uses one seat from the moment it's sent. Revoking an invitation frees the seat immediately.
+</Callout>
+
+---
+
+## Billing and seats
+
+- Pending invitations are billed from the moment they are sent
+- Invitations do not expire automatically — they remain pending (and billable) until the admin revokes them
+- The seat counter on the members page shows both active members and pending invitations
+- You cannot reduce your seat count below the total of active members plus pending invitations
+
+---
+
+## Related
+
+- [Workspaces](/features/workspaces)
+- [Personalization](/features/personalization)
