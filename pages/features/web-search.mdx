@@ -1,0 +1,75 @@
+---
+title: Web Search
+description: Search the web for real-time information directly from chat.
+---
+
+import { Callout } from 'nextra/components'
+
+# Web Search
+
+**What it does**: Ask Suprvisr to search the web and it pulls real-time information into your conversation. Results include inline citations so you can verify sources.
+
+---
+
+## How to use it
+
+You can trigger a web search in two ways:
+
+### Slash command
+
+Type `/websearch` followed by your query:
+
+- `/websearch latest AI regulation updates in Canada`
+- `/websearch competitor pricing for project management tools`
+
+The slash command forces the AI to search the web, even if it could answer from memory.
+
+### Natural language
+
+Just ask a question that needs current information. The AI decides when a web search would help:
+
+- "What were the top tech layoffs this week?"
+- "Find me the latest React 19 release notes"
+
+<Callout type="tip">
+  **Pro tip**: Use the `/websearch` slash command when you specifically want fresh web results. For general questions, the AI will decide whether to search on its own.
+</Callout>
+
+---
+
+## Citations
+
+Web search results include citation chips at the bottom of the response. Each chip shows the source website — click to open the original page.
+
+Citations help you verify the information and dig deeper into any source the AI referenced.
+
+---
+
+## Admin controls
+
+Web search is controlled at the organization level. Admins can enable or disable it from **Settings > Organization**.
+
+When disabled:
+- The `/websearch` slash command is hidden
+- The AI cannot perform web searches, even if asked directly
+
+<Callout type="info">
+  **Note**: Web search uses Google Search via Gemini. Queries are automatically sanitized to remove any personally identifiable information before being sent.
+</Callout>
+
+---
+
+## Tips & gotchas
+
+- **Best for current events** — web search shines for real-time info, recent news, pricing, and anything that changes frequently
+- **PII is stripped** — email addresses, phone numbers, and other personal data are automatically removed from search queries
+- **Results vary** — web search results depend on what Google returns at the time of the query
+- **Quota-free** — unlike image generation, web search has no per-user quota
+
+---
+
+## Related
+
+- [AI Chat](/features/ai-chat) — the main chat interface
+- [Citations](/features/citations) — how source references work
+- [Slash Commands](/features/slash-commands) — all available commands

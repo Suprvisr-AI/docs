@@ -1,0 +1,63 @@
+---
+title: Slash Commands
+description: Quick commands to trigger specific AI tools directly from the chat input.
+---
+
+import { Callout } from 'nextra/components'
+
+# Slash Commands
+
+**What it does**: Type `/` in the chat input to access quick commands that trigger specific AI tools. Slash commands give you direct control over what the AI does instead of relying on it to decide.
+
+---
+
+## Available commands
+
+| Command | What it does | Requires |
+|---------|-------------|----------|
+| `/websearch` | Search the web for real-time information | Web search enabled by admin |
+| `/image` | Generate an image from a text description | Image generation enabled by admin |
+| `/data` | Search your connected documents and data sources | At least one data source connected |
+
+---
+
+## How to use them
+
+### Opening the command menu
+
+Type `/` in an empty chat input. A popover menu appears showing all available commands.
+
+- **Arrow keys** or **Tab** to navigate between commands
+- **Enter** to select
+- **Escape** to dismiss
+
+### Using a command
+
+After selecting a command, it appears as a blue prefix in the input field (e.g. `/websearch`). Type your query after it and press Enter.
+
+Example: select `/image`, then type `a mountain landscape at sunset` and send.
+
+### Clearing a command
+
+Press **Backspace** on an empty input to remove the active slash command and return to normal chat.
+
+<Callout type="info">
+  **Note**: Commands only appear in the menu if the corresponding feature is enabled for your organization. If you don't see a command, ask your admin to enable it in Settings.
+</Callout>
+
+---
+
+## Tips & gotchas
+
+- **Commands force tool use** — `/websearch` always triggers a web search, even if the AI could answer without one. Use it when you specifically want fresh results.
+- **Natural language works too** — you don't need slash commands for every request. The AI automatically uses tools when appropriate. Commands are for when you want to be explicit.
+- **One command at a time** — you can only have one active slash command per message
+- **Slash command text is hidden** — the command prefix doesn't appear in your message bubble, only your query does
+
+---
+
+## Related
+
+- [Web Search](/features/web-search) — real-time web search tool
+- [Image Generation](/features/image-generation) — AI image creation
+- [AI Chat](/features/ai-chat) — the main chat interface

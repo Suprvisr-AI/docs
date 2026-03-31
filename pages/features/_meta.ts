@@ -6,6 +6,8 @@ export default {
   },
   'ai-chat': 'AI Chat',
   'reasoning-verbosity': 'Reasoning',
+  'slash-commands': 'Slash Commands',
+  'web-search': 'Web Search',
   dictate: 'Dictate',
   'image-generation': 'Image Generation',
   '-- Workspace': {

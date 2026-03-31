@@ -13,11 +13,15 @@ import { Callout } from 'nextra/components'
 
 ## How to use it
 
-Just ask naturally in any chat:
+You can trigger image generation in two ways:
 
-- "Generate an image of a modern office workspace"
-- "Create a logo concept for a coffee brand"
-- "Make an illustration of a team brainstorming session"
+**Slash command** — type `/image` followed by a description:
+- `/image a modern office workspace with natural lighting`
+- `/image a minimalist logo concept for a coffee brand`
+
+**Natural language** — just ask in any chat:
+- "Generate an image of a team brainstorming session"
+- "Create an illustration of our product roadmap"
 
 The AI uses its image generation tool automatically when your message calls for a visual. You'll see a **"Generating image..."** indicator while it works.
 
@@ -46,6 +50,14 @@ When you reach your limit, a **"Weekly limit reached"** card appears instead of 
 
 ---
 
+## Admin controls
+
+Image generation is controlled at the organization level. Admins can enable or disable it from **Settings > Organization**.
+
+When disabled, the `/image` slash command is hidden and the AI will not generate images even if asked directly.
+
+---
+
 ## Tips & gotchas
 
 - **Be descriptive** — the more detail you give in your prompt, the better the result
@@ -58,4 +70,5 @@ When you reach your limit, a **"Weekly limit reached"** card appears instead of 
 ## Related
 
 - [AI Chat](/features/ai-chat) — the main chat interface
+- [Slash Commands](/features/slash-commands) — all available commands including `/image`
 - [File Uploads](/features/file-uploads) — attach your own images instead of generating
