@@ -1,0 +1,103 @@
+---
+title: VHR & VERA — Productivity Metrics
+description: How Suprvisr AI measures the value of AI usage with the VERA scoring algorithm.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# VHR & VERA — Productivity Metrics
+
+**What it does**: VHR (Value Hours Recovered) measures how much time your team saves using AI. VERA (Verified Effort Recovery Assessment) is the algorithm that calculates VHR — designed to be credible, transparent, and auditable.
+
+---
+
+## How it works
+
+VERA scores every AI response individually, based on what the AI actually did — not just how many tokens it generated.
+
+<Steps>
+
+### Task classification
+
+Each AI response is classified by what it accomplished:
+
+| Type | What it means | Time credit |
+|---|---|---|
+| **Trivial** | Very short response, no context used | 0 min |
+| **Lookup** | Quick fact or answer | 5 min |
+| **Drafting** | Content creation (emails, docs) | 15 min |
+| **Analysis** | Research, synthesis, or multi-turn work | 30 min |
+| **Generation** | Charts, images, or structured reports | 35 min |
+
+### Context multiplier
+
+When the AI uses your company's documents (via knowledge base or project files), the score increases:
+
+- **No company docs**: 1.0x
+- **1-2 document chunks**: 1.25x
+- **3+ chunks** (cross-document synthesis): 1.5x
+
+### Action premiums
+
+Certain high-value outputs earn additional credit:
+
+| Action | Premium |
+|---|---|
+| Chart or visualization | +20 min |
+| Image generated | +20 min |
+| Structured report (SOP, export) | +25 min |
+| Multi-turn conversation (3+ turns) | +8 min |
+| File analyzed | +15 min |
+
+### Credibility decay
+
+To prevent inflated numbers, VERA reduces credit for high-volume query days. Power users doing deep work (RAG, tools, analysis) get wider brackets before decay kicks in.
+
+</Steps>
+
+<Callout type="info">
+  **Calibration**: VERA's time credits are set at 40-50% of manual task benchmarks from McKinsey, Harvard/BCG, Forrester, and other studies. This reflects that AI handles first-draft generation while humans still review and refine.
+</Callout>
+
+---
+
+## Reading the VHR Report
+
+The VHR Report (admin only) has three layers:
+
+### Dashboard
+
+- **VHR Yield**: Hours recovered per paid seat, annualized. This is the single number that tells you how much value your org is getting.
+- **Tier label**: At Risk (&lt; 60), Industry Average (60-120), Strong Adoption (120-200), or Best-in-Class (200+).
+- **Trend chart**: VHR over time — is adoption growing, plateauing, or declining?
+- **Task type breakdown**: What kinds of work is the AI doing for your team?
+- **Per-user table**: Individual VHR for every active user.
+
+### How VERA Works
+
+An expandable panel explaining the full formula, scoring tiers, and calibration methodology. Show this to your CFO when they ask how the numbers are calculated.
+
+### Audit drill-down
+
+Click any user to see their daily breakdown. Click a day to see individual messages. Click a message to see exactly how its VERA score was calculated — task type, multiplier, premiums, decay rate, and final score.
+
+<Callout type="tip">
+  **Feedback matters**: When a user gives a thumbs-down on an AI response, that message's VHR score is automatically zeroed. This keeps the metric honest — only valued responses count.
+</Callout>
+
+---
+
+## Tips & gotchas
+
+- **VHR is time-only**: We report hours saved, not dollar values. Leadership can infer value based on their own context.
+- **No individual rankings**: Admins see per-user VHR in a table, but there are no leaderboards or rankings. Users draw their own conclusions.
+- **Scores are per-message**: Each AI response gets its own VERA score at creation time. You can audit any individual score.
+- **Deep work is rewarded**: The depth-aware decay system means power users doing real analytical work aren't penalized the same as someone sending many short queries.
+
+---
+
+## Related
+
+- [Dashboards](/features/dashboards)
+- [AI Chat](/features/ai-chat)
+- [Knowledge Base](/features/knowledge-base)

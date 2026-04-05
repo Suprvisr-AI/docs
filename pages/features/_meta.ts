@@ -15,6 +15,7 @@ export default {
     title: 'Workspace'
   },
   workspaces: 'Workspaces',
+  'collaborative-chat': 'Collaborative Chat',
   conversations: 'Conversations',
   cards: 'Cards & Artifacts',
   citations: 'Citations',
@@ -39,6 +40,7 @@ export default {
   },
   'member-invitations': 'Member Invitations',
   dashboards: 'Dashboards',
+  'vera-vhr': 'VHR & VERA Metrics',
   'self-destructing-chats': 'Self-Destructing Chats',
   'feature-board': 'Feature Board'
 }
