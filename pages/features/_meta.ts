@@ -5,6 +5,8 @@ export default {
     title: 'Core AI'
   },
   'ai-chat': 'AI Chat',
+  'follow-up-questions': 'Follow-Up Questions',
+  'scheduled-tasks': 'Scheduled Tasks',
   'reasoning-verbosity': 'Reasoning',
   'slash-commands': 'Slash Commands',
   'web-search': 'Web Search',

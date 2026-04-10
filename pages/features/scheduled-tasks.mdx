@@ -1,0 +1,84 @@
+---
+title: Scheduled Tasks
+description: Set up recurring AI tasks that run automatically on a schedule and deliver results via chat and email.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# Scheduled Tasks
+
+**What it does**: Create recurring AI tasks that run automatically — daily, weekly, biweekly, or monthly. The AI executes your prompt on schedule and delivers results both in-app and via email, so you get insights without lifting a finger.
+
+---
+
+## How to use it
+
+<Steps>
+
+### Start with the `/schedule` slash command
+
+Type `/schedule` in the chat input, then describe what you want the AI to do on a recurring basis. For example: `/schedule Send me a weekly summary of our project status every Monday at 9am`.
+
+### The AI confirms the details
+
+The AI parses your request and presents a **scheduled task config card** showing what it will do, how often, and when. Review the details to make sure everything looks right.
+
+### Configure the schedule
+
+The config card lets you fine-tune:
+
+- **Cadence** — Daily, Weekly, Biweekly, or Monthly
+- **Day** — which day of the week (for weekly/biweekly) or day of the month (for monthly)
+- **Time** — hour and minute in your local timezone
+- **Timezone** — select from common timezones (US, Europe, Asia-Pacific)
+
+### The task runs automatically
+
+At the scheduled time, the AI executes your prompt and delivers the results:
+
+- **In chat** — a result card appears in the conversation with the AI's output
+- **By email** — you receive an email notification with a summary and a link back to the full result in Cumulus
+
+</Steps>
+
+---
+
+<Callout type="tip">
+  **Pro tip**: Scheduled tasks work great for recurring reports, daily briefings, weekly digests, or any analysis you need on a regular cadence. Write your prompt as if you were asking the AI directly — it has access to all the same tools and data sources.
+</Callout>
+
+<Callout type="info">
+  **Note**: Only one scheduled task can be active per chat session. To set up multiple schedules, create separate chat sessions for each.
+</Callout>
+
+---
+
+## Managing scheduled tasks
+
+You can manage your scheduled tasks from **Settings** or from the config card in chat:
+
+- **Pause** — temporarily stop a task from running without deleting it
+- **Resume** — reactivate a paused task
+- **Cancel** — permanently remove a scheduled task
+- **Edit prompt** — update what the AI does on each run
+- **Change schedule** — adjust the cadence, day, time, or timezone
+
+A small **gear icon** appears in the chat sidebar next to sessions that have an active scheduled task.
+
+---
+
+## Tips & gotchas
+
+- **One per session** — each chat session can have at most one active or paused scheduled task. Start a new chat for additional schedules.
+- **Timezone-aware** — schedules respect the timezone you select, so "9am" means 9am in your chosen timezone regardless of where the server runs
+- **Email delivery** — results are emailed to the address associated with your Cumulus account. Make sure your email is correct in your profile.
+- **Data access** — scheduled tasks have access to the same data sources and tools as a normal chat message in that session (knowledge base, connected drives, web search, etc.)
+- **Missed runs** — if a task can't run at the scheduled time (e.g., system maintenance), it will execute on the next available cycle
+
+---
+
+## Related
+
+- [Slash Commands](/features/slash-commands) — all available slash commands including `/schedule`
+- [AI Chat](/features/ai-chat) — the main chat experience
+- [Cards & Artifacts](/features/cards) — how result cards work in chat

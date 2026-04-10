@@ -1,0 +1,73 @@
+---
+title: Follow-Up Questions
+description: The AI asks clarifying questions before proceeding when your request needs more context.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# Follow-Up Questions
+
+**What it does**: When the AI needs more information to give you a great answer, it pauses and asks targeted clarifying questions in an interactive card — then picks up right where it left off with your answers as context.
+
+---
+
+## How it works
+
+Instead of guessing what you mean, the AI can ask 1–4 follow-up questions before proceeding. This typically happens when you ask it to create, write, or analyze something without specifying key details like topic, audience, format, or which data source to use.
+
+<Steps>
+
+### The AI detects ambiguity
+
+You send a message like "Write a proposal for the team" — the AI recognizes it needs more context (who's the audience? what's the topic? what format?).
+
+### A follow-up card appears
+
+A multi-question stepper card shows up in your chat. Each question includes 2–4 preset answer options to choose from, plus a free-text field if you'd rather type your own answer.
+
+### Answer the questions
+
+Select a preset option or type a custom answer. The card automatically advances to the next question. You can also **skip** individual questions or **skip all** remaining questions if you'd rather let the AI decide.
+
+### The AI continues
+
+Once you've answered (or skipped), the AI resumes its work using your answers as context. Your follow-up responses are woven into the conversation so the AI produces exactly what you had in mind.
+
+</Steps>
+
+---
+
+<Callout type="tip">
+  **Pro tip**: If the AI asks a question you don't have a strong opinion on, just skip it. The AI will make a reasonable default choice and keep moving.
+</Callout>
+
+<Callout type="info">
+  **Note**: The AI won't ask follow-ups for simple questions, greetings, or factual lookups — only when your request could go in meaningfully different directions and clarification would improve the result.
+</Callout>
+
+---
+
+## What the card looks like
+
+- **Progress indicator** — shows "1 of 3" so you know how many questions are left
+- **Preset options** — numbered buttons for common answers (click to select and auto-advance)
+- **Custom input** — free-text field for anything not covered by the presets
+- **Navigation** — Back button to revisit previous answers, Skip to move on
+- **Collapsed state** — after answering, the card collapses to a compact summary showing your responses. Click to expand and review the full Q&A
+
+---
+
+## Tips & gotchas
+
+- **Answers persist across page refreshes** — your follow-up state is saved, so you won't lose progress if you reload the page
+- **One follow-up at a time** — the AI won't chain multiple rounds of follow-ups. It asks everything it needs in a single card.
+- **Skipping is fine** — skipped questions don't block the AI. It proceeds with whatever context it has.
+- **Review your answers** — answered follow-up cards stay in the chat as collapsed summaries. Expand them anytime to see what you told the AI.
+
+---
+
+## Related
+
+- [AI Chat](/features/ai-chat) — the main chat experience
+- [Cards & Artifacts](/features/cards) — how interactive cards work in chat
+- [Slash Commands](/features/slash-commands) — trigger specific AI tools directly
