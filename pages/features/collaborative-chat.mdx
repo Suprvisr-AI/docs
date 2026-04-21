@@ -1,0 +1,73 @@
+---
+title: Collaborative Chat
+description: Multi-user AI chat within project workspaces for real-time team collaboration.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# Collaborative Chat
+
+**What it does**: Enables multiple team members to chat together with AI inside a project workspace. Members can @mention each other and AI, see who's online and typing, and AI intelligently decides when to contribute based on conversation context.
+
+---
+
+## How to use it
+
+<Steps>
+
+### Open a project chat
+
+Navigate to a project and start a new chat, or open an existing one. Any chat within a project can become collaborative.
+
+### Add team members
+
+Click the **+** button in the presence bar at the top of the chat to add project members. Once a second member is added, the chat becomes collaborative automatically.
+
+### Use @mentions to control AI
+
+- **@AI** — Explicitly ask AI to respond
+- **@TeamMember** — Direct a message to a specific person (AI stays silent)
+- **No mention** — AI decides whether to respond based on the conversation context
+
+### Collaborate in real-time
+
+See who's online (green dots on avatars) and who's typing. Messages appear in real-time for all participants.
+
+</Steps>
+
+---
+
+<Callout type="info">
+  **How AI behaves in collaborative chats**: When multiple people are active, AI becomes more of a supportive listener. It only speaks up when it has clear value to add — factual answers, analysis, or action items. You can always force a response with @AI.
+</Callout>
+
+<Callout type="tip">
+  **Pro tip**: Use the "Ask AI" button that appears when AI has been quiet for a few messages to explicitly invoke its input without sending a new message.
+</Callout>
+
+---
+
+## File access in collaborative chats
+
+When SharePoint or Google Drive integrations are enabled, AI only accesses files that **all** chat members have access to. This ensures no one sees information they shouldn't through AI-generated responses.
+
+<Callout type="warning">
+  If any member of a collaborative chat hasn't connected their SharePoint or Google Drive account, those integrations will be disabled for the entire chat session.
+</Callout>
+
+---
+
+## Tips & gotchas
+
+- **Adding members**: Only project members can be added to a collaborative chat
+- **Removing members**: Any session member can remove others, but the chat creator cannot be removed
+- **Solo mode**: If all other members are removed, the chat reverts to normal solo AI behavior
+- **Message visibility**: All messages (including @user-to-user ones) are visible to all chat members — @mentions only control whether AI responds, not message visibility
+
+---
+
+## Related
+
+- [Workspaces](/features/workspaces)
+- [AI Chat](/features/ai-chat)
+- [Conversations](/features/conversations)

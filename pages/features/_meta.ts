@@ -5,6 +5,7 @@ export default {
     title: 'Core AI'
   },
   'ai-chat': 'AI Chat',
+  'collaborative-chat': 'Collaborative Chat',
   'follow-up-questions': 'Follow-Up Questions',
   'scheduled-tasks': 'Scheduled Tasks',
   'reasoning-verbosity': 'Reasoning',
