@@ -43,5 +43,10 @@ export default {
   'member-invitations': 'Member Invitations',
   dashboards: 'Dashboards',
   'self-destructing-chats': 'Self-Destructing Chats',
-  'feature-board': 'Feature Board'
+  'feature-board': 'Feature Board',
+  '-- Billing': {
+    type: 'separator',
+    title: 'Billing'
+  },
+  'pricing-and-plans': 'Pricing & Plans'
 }
