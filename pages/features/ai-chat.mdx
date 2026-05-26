@@ -1,6 +1,6 @@
 ---
 title: AI Chat
-description: Cumulus AI Chat — streaming responses, role-aware answers, and example prompts.
+description: Cumulus AI Chat — streaming responses, role-aware answers, model selection, reasoning controls, and example prompts.
 ---
 
 import { Callout, Steps, Tabs } from 'nextra/components'
@@ -51,6 +51,47 @@ When you select your role during onboarding, the AI adapts how it communicates:
 <Callout type="info">
   Change your role anytime in **Settings → Personalization**. It takes effect in new chats immediately.
 </Callout>
+
+---
+
+## Model & provider selector
+
+Each chat — or individual message — can use a different underlying model. Use the model selector in the chat input area to switch between **OpenAI** and **Gemini** providers and their available model variants.
+
+This is useful when one model gives a noticeably better answer for the task at hand: a coding question might land better with one model, while a long-form writing task lands better with another. The workspace default is set by your admin, but any member can override it per message.
+
+<Callout type="tip">
+  Not sure which to pick? Leave it on the workspace default. Switch when you're not happy with an answer and want to see if a different model handles it better.
+</Callout>
+
+---
+
+## Reasoning effort
+
+The **reasoning effort** control lets you set how much deliberation the model does before answering. It appears alongside the model selector in the chat input and applies per message.
+
+| Level | What it means |
+|-------|---------------|
+| **Minimal** | Fast, direct answer — best for simple lookups or quick edits |
+| **Low** | Light reasoning — good for most everyday questions |
+| **Medium** | Balanced — the default for most tasks |
+| **High** | Deep deliberation — slower, but more thorough for complex analysis |
+
+Higher effort = more careful, step-by-step thinking before the response is written. For nuanced analysis, ambiguous requests, or multi-part problems, bumping effort up often produces meaningfully better answers.
+
+See [Reasoning Verbosity](/features/reasoning-verbosity) for how to control whether that reasoning is shown in the chat.
+
+---
+
+## Follow-up questions
+
+Cumulus can ask clarifying questions before answering when your request needs more context. This is enabled by default and can be toggled off per chat. See [Follow-Up Questions](/features/follow-up-questions) for full details.
+
+---
+
+## Agent mode
+
+For multi-step tasks — research, data analysis, or anything that requires planning before acting — Cumulus has an Agent mode accessible directly inside chat.
 
 ---
 
@@ -129,4 +170,6 @@ For complex queries, Cumulus shows its reasoning in real time:
 
 - [Conversations](/features/conversations) — manage and organize your chats
 - [File Uploads](/features/file-uploads) — attach files and documents to your messages
+- [Follow-Up Questions](/features/follow-up-questions) — how clarifying question cards work
+- [Reasoning Verbosity](/features/reasoning-verbosity) — control how much reasoning the AI shows
 - [Prompt Strategies](/guides/prompt-strategies) — get better answers with better prompts

@@ -7,13 +7,7 @@ import { Callout, Steps } from 'nextra/components'
 
 # File Uploads
 
-You can attach files directly to your messages — documents, spreadsheets, images, and more. Cumulus reads and analyzes the content so you can ask questions about it.
-
-<div className="gif-placeholder">
-  <div className="gif-placeholder-icon">🎬</div>
-  <div className="gif-placeholder-title">File upload in action</div>
-  <div className="gif-placeholder-label">GIF placeholder — drag-and-drop or button upload, then asking a question</div>
-</div>
+You can attach files directly to your messages — documents, spreadsheets, images, and more. Cumulus reads and analyzes the content so you can ask questions about it, get summaries, and extract insights.
 
 ---
 
@@ -29,12 +23,33 @@ Click the **+ icon** to the left of the message input to open a file picker.
 
 ---
 
+## Supported file types
+
+| Format | Extensions |
+|--------|-----------|
+| Documents | `.pdf`, `.docx`, `.txt`, `.md` |
+| Spreadsheets | `.csv`, `.xlsx` |
+| Data | `.json`, `.xml` |
+| Images | `.png`, `.jpg`, `.gif`, `.webp` |
+
+---
+
+## Limits
+
+| Limit | Value |
+|-------|-------|
+| Per file | 50 MB |
+| Files per chat session | 10 assets |
+| Sources per project | 20 sources |
+
+---
+
 ## File status indicators
 
 After attaching a file, a chip appears in the input area showing the file's status:
 
 | Status | What it means |
-|---|---|
+|--------|---------------|
 | ⟳ Spinner | File is uploading |
 | ✓ Checkmark | Ready to send with your message |
 | ⚠ Triangle | Upload failed — try again |
@@ -43,35 +58,29 @@ You can remove an attached file by clicking the **X** on its chip before sending
 
 ---
 
-## Supported file types
+## What happens after upload
+
+Once you send a message with a file attached, Cumulus begins ingesting it. Large documents move through a progressive pipeline:
 
 <Steps>
 
-### Documents and images
+### Extract
 
-Word documents, PDFs, images (JPG, PNG, WebP, GIF), and plain text files are attached directly to your message and sent to the AI for processing.
+The document's text and structure are extracted from the raw file.
 
-### Spreadsheets and CSVs
+### Chunk
 
-CSV and Excel files are handled differently — they're uploaded as **data assets** and linked to your conversation. The AI can query, summarize, and visualize the data.
+The content is split into segments sized for AI retrieval.
 
-### Multiple files
+### Embed
 
-You can attach multiple files at once. Each appears as its own chip in the input area.
+Each chunk is converted into a vector embedding and indexed for search.
+
+### Ready
+
+The file is fully indexed. Cumulus notifies you in chat when it's ready to query — for long documents, expect a short wait while this completes.
 
 </Steps>
-
----
-
-## What to do with uploaded files
-
-Once a file is attached and your message is sent, you can ask the AI to:
-
-- **Summarize** — "Summarize the key points from this document"
-- **Analyze data** — "What are the trends in this spreadsheet?"
-- **Answer questions** — "Does this PDF mention anything about the refund policy?"
-- **Extract information** — "List all action items from this meeting notes document"
-- **Compare** — "Compare the content of these two files"
 
 <Callout type="tip">
   For large documents, be specific about what you want. "Summarize section 3" is faster and more accurate than "summarize everything."
@@ -79,16 +88,24 @@ Once a file is attached and your message is sent, you can ask the AI to:
 
 ---
 
-## File size limits
+## What to ask once a file is ready
 
-| Type | Limit |
-|---|---|
-| Images | Up to 5MB |
-| Documents | Up to 5MB |
-| Spreadsheets / CSV | Up to 5MB |
+- **Summarize** — "Summarize the key points from this document"
+- **Analyze data** — "What are the trends in this spreadsheet?"
+- **Answer questions** — "Does this PDF mention anything about the refund policy?"
+- **Extract information** — "List all action items from this meeting notes document"
+- **Compare** — "Compare the content of these two files"
+
+---
+
+## Citations
+
+Once a file is ingested, Cumulus cites it in its answers — linking the specific passage or table it drew from. See [Citations](/features/citations) for how citation links work and how to navigate them.
+
+---
 
 <Callout type="info">
-  For SharePoint documents, you don't need to upload files manually — they're available directly through the SharePoint integration.
+  For SharePoint or Google Drive documents, you don't need to upload files manually — they're available directly through the relevant integration.
 </Callout>
 
 ---
@@ -96,4 +113,6 @@ Once a file is attached and your message is sent, you can ask the AI to:
 ## Related
 
 - [AI Chat](/features/ai-chat) — the main chat interface
+- [Knowledge Base](/features/knowledge-base) — org-wide persistent document library
+- [Citations](/features/citations) — how Cumulus links answers back to source content
 - [SharePoint Integration](/features/sharepoint) — connect your document library for hands-free file access

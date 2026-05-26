@@ -1,17 +1,37 @@
 ---
 title: Member Invitations
-description: Invite team members to your organization by email with role assignment and seat management.
+description: Invite team members to your organization by email with role assignment, three-tier org roles, and seat management.
 ---
 
 import { Callout, Steps } from 'nextra/components'
 
 # Member Invitations
 
-**What it does**: Admins and owners can invite new team members by email. Invitees receive a branded email with a link to join your organization — they sign up (or log in) and are added automatically.
+**What it does**: Admins and owners can invite new team members by email. Invitees receive a branded email with a link to join your organization — they sign up (or log in) and are added automatically with the role you chose.
+
+---
+
+## Organization roles
+
+Cumulus uses three org-level roles. Every member of your workspace has exactly one.
+
+| Role | Who has it | What they can do |
+|------|-----------|-----------------|
+| **OWNER** | The workspace creator (one per org) | Full control — billing, org settings, transfers ownership. Cannot be removed by anyone else. |
+| **ADMIN** | Promoted by the owner or another admin | Invite/remove members, change roles, configure org settings, manage integrations and Knowledge Base. Cannot remove the OWNER. |
+| **MEMBER** | Standard team members | Chat, upload personal files, create projects, use connected integrations subject to plan limits. Cannot manage members or org settings. |
+
+<Callout type="info">
+  There is always exactly one OWNER. Ownership can be transferred, but not shared.
+</Callout>
 
 ---
 
 ## How to invite a member
+
+<Callout type="info">
+  Only **OWNER** and **ADMIN** can invite new members. The **Invite Member** button is not visible to MEMBERs.
+</Callout>
 
 <Steps>
 
@@ -25,7 +45,7 @@ Type the invitee's email address and choose a role:
 
 | Role | Permissions |
 |------|------------|
-| **Member** | Can chat with AI, view shared content |
+| **Member** | Can chat with AI, upload files, create projects |
 | **Admin** | Full access including member management and integrations |
 
 ### Send the invitation
@@ -54,6 +74,20 @@ Click **Send Invitation**. The invitee appears in the members list with a **Pend
 
 <Callout type="info">
   If an invitee is already logged in when they click the invitation link, acceptance happens automatically — they're redirected straight to the app without an extra step.
+</Callout>
+
+---
+
+## Changing roles
+
+OWNER and ADMIN can change the role of any other member:
+
+- **Promote a MEMBER to ADMIN** — grants full management permissions immediately
+- **Demote an ADMIN to MEMBER** — removes management permissions immediately
+- **Transfer ownership** — only the OWNER can hand off ownership via **Transfer Ownership** in Settings. The current owner becomes an ADMIN; the new owner takes the OWNER role.
+
+<Callout type="warning">
+  **Last-admin protection**: Cumulus will not let you remove or demote the last admin (or the owner) from a workspace. This prevents accidentally locking the organization out of its own settings.
 </Callout>
 
 ---
@@ -88,8 +122,21 @@ Use the **...** menu on any pending invitation row to access these actions.
 
 ---
 
+## Project-level editor role
+
+Separately from their org role, each member added to a **project** (workspace) has an **editor flag** that controls what they can do within that project:
+
+| Editor flag | What they can do in the project |
+|-------------|--------------------------------|
+| **Editor (on)** | Edit project sources, update project memory, change project settings |
+| **Viewer (off)** | Read chats and sources; cannot modify project configuration |
+
+This is set per-project when adding a team member to a workspace, and can be changed from the project's **Team** tab.
+
+---
+
 ## Related
 
-- [Workspaces](/features/workspaces)
-- [Personalization](/features/personalization)
-- [Admin Setup](/guides/admin-setup)
+- [Workspaces](/features/workspaces) — project-level team and editor settings
+- [Personalization](/features/personalization) — individual member preferences
+- [Admin Setup](/guides/admin-setup) — full admin configuration guide

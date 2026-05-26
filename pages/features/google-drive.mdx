@@ -7,10 +7,10 @@ import { Callout, Steps } from 'nextra/components'
 
 # Google Drive Integration
 
-Connect Cumulus to your Google Drive shared drives or personal drives. Once connected, the AI can search and reference your organisation's documents — and results are filtered by each user's actual Google Drive permissions.
+Connect Cumulus to your Google Drive shared drives or personal drives. Once connected, the AI can search and reference your organisation's documents — and results are always filtered by each user's actual Google Drive permissions. You will never see a file in an AI answer that you couldn't open in Drive yourself.
 
 <Callout type="info">
-  Google Drive integration requires a **Google Workspace account** (e.g. you@yourcompany.com). Personal Gmail accounts are not supported for initial setup, but team members can connect personal drives if enabled by an admin.
+  Google Drive integration requires a **Google Workspace account** (e.g. you@yourcompany.com). Personal Gmail accounts are not supported for shared org-level connections, but team members can connect their personal My Drive if an admin enables the feature.
 </Callout>
 
 ---
@@ -21,12 +21,24 @@ With Google Drive connected, Cumulus can:
 
 - **Search your documents** using semantic similarity when you ask a question
 - **Enforce per-user permissions** — only files you can access in Google Drive appear in results
-- **Support shared and personal drives** — admins connect shared drives, users can optionally connect their own
-- **Stay in sync** — connected drives are synced via webhooks and periodic checks so the AI always has fresh content
+- **Support shared and personal drives** — admins connect shared drives for the whole org; users can optionally connect their own My Drive
+- **Stay in sync** — connected drives are kept current via webhook push notifications and periodic checks; subscriptions renew automatically
 
 ---
 
-## Setting up Google Drive (Admin)
+## Two types of Google Drive connection
+
+### Shared organisational drives (admin-connected)
+
+An admin connects one or more **Shared Drives** (or folders within them) at the org level. These are indexed for the whole organisation — any team member whose underlying Drive permissions allow access to a file can find and cite it in chat.
+
+### Personal My Drive (user-connected)
+
+Each user can also connect their own **My Drive**. This is a personal connection — only that user's files are surfaced when they ask a question, and permission checks happen on every query. This feature is gated by an org-level setting and must be enabled by an admin before users can connect their own drives.
+
+---
+
+## Setting up a shared drive (Admin)
 
 <Callout type="info">
   Only **Admins** and **Owners** can connect shared drives.
@@ -48,11 +60,11 @@ The connection wizard shows your available drives — **My Drive** and any **Sha
 
 ### Choose folders (optional)
 
-Select specific folders to index, or skip to index the entire drive. Toggle **subfolders** to include nested content.
+Browse the folder tree and select specific folders to index, or skip to index the entire drive. Toggle **subfolders** on any selected folder to recursively include all nested content.
 
 ### Confirm and start syncing
 
-Review your selection and click **Connect**. Cumulus begins indexing your documents immediately.
+Review your selection and click **Connect**. Cumulus begins an initial bulk sync immediately — documents are indexed and available in chat as processing completes.
 
 </Steps>
 
@@ -60,11 +72,15 @@ Review your selection and click **Connect**. Cumulus begins indexing your docume
   **Member visibility**: Non-admin team members can see that Google Drive is connected and its status, but cannot view connection details or manage connections. Only admins and owners have full access to the Google Drive settings page.
 </Callout>
 
+<Callout type="tip">
+  Each connection on the admin page shows a **Shared Drive** or **Personal Drive** badge so you can tell them apart at a glance.
+</Callout>
+
 ---
 
-## Enabling Personal Drives
+## Enabling personal drives (Admin)
 
-Admins can allow team members to connect their own personal Google Drive for AI search.
+Admins can allow team members to connect their own My Drive for AI search.
 
 <Steps>
 
@@ -74,40 +90,51 @@ On the Google Drive settings page, enable the **Allow Personal Drives** toggle a
 
 ### Users connect from Settings
 
-Team members will see a **Connect My Drive** option in **Settings → Integrations**. Clicking it creates a personal drive connection.
+Team members will see a **Connect My Drive** option in **Settings → Integrations**. Clicking it launches the same Google OAuth flow and creates a personal drive connection scoped to that user.
 
 </Steps>
 
 <Callout type="tip">
-  Personal drive documents are searchable by the user and any teammates who also have access in Google Drive. Permission checks happen on every search.
+  Personal drive documents are only searchable by the user who connected the drive. Permission checks happen on every query — if access to a file changes in Drive, the change is reflected immediately.
 </Callout>
+
+---
+
+## Sync types
+
+| Sync type | When it runs |
+|-----------|-------------|
+| **Initial bulk sync** | Runs automatically on first connection — indexes all files in scope |
+| **Delta sync** | Runs ongoing via the Drive Changes API and webhook push notifications — picks up new, modified, and deleted files |
+| **Automatic renewal** | Webhook subscriptions renew before they expire — no action required |
 
 ---
 
 ## How permission enforcement works
 
-Unlike some integrations that return all indexed results, Google Drive search enforces per-user permissions on every query:
+Unlike integrations that return all indexed content regardless of who's asking, Google Drive search enforces per-user permissions on every query:
 
-1. Cumulus finds relevant document chunks using semantic search
-2. For each unique file, Cumulus calls the Google Drive API with **your** access token
-3. Only files you can actually access in Google Drive are included in the response
+1. Cumulus finds relevant document chunks using semantic search across the indexed content
+2. For each candidate file, Cumulus checks your access using your Google account token
+3. Only files you can actually open in Google Drive are included in the AI's response
 
 This means:
-- Users without a Google account won't see the search tool at all (no errors, it simply isn't available)
-- If your Google token expires, you'll be prompted to re-authenticate
-- Shared drive documents respect the same access controls as Google Drive itself
+- Team members who haven't linked a Google account won't see Drive results — the tool simply isn't offered to them (no errors)
+- If your Google token expires, you'll be prompted to re-authenticate from Settings
+- Shared drive documents respect exactly the same access controls as Google Drive itself
 
 ---
 
 ## Tips & gotchas
 
-- **Connection scope badges**: Each connection on the admin page shows a "Shared Drive" or "Personal Drive" badge so you can tell them apart
-- **Non-Google users**: Team members who signed in with email/password can still view existing connections but cannot create new ones
-- **Token expiry**: If search results come back empty unexpectedly, try re-authenticating with Google from the settings page
+- **Non-Google users**: Team members who signed in with email/password can still view existing connections on the settings page but cannot create new ones
+- **Empty results**: If Drive search comes back empty unexpectedly, try re-authenticating with Google from **Settings → Integrations**
+- **Folder scope**: If you indexed a sub-folder, only files within that folder (and its descendants) are searchable — not the rest of the drive
 
 ---
 
 ## Related
 
-- [SharePoint Integration](/features/sharepoint)
-- [File Uploads](/features/file-uploads)
+- [SharePoint Integration](/features/sharepoint) — connect Microsoft SharePoint alongside or instead of Google Drive
+- [File Uploads](/features/file-uploads) — manually attach files to individual chat messages
+- [Admin Setup](/guides/admin-setup) — organisation-level integration management

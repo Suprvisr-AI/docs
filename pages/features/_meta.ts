@@ -18,6 +18,7 @@ export default {
   },
   workspaces: 'Workspaces',
   conversations: 'Conversations',
+  collaboration: 'Collaboration',
   cards: 'Cards & Artifacts',
   citations: 'Citations',
   'file-uploads': 'File Uploads',

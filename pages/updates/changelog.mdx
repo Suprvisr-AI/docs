@@ -9,6 +9,55 @@ A running log of new features, improvements, and fixes in Cumulus.
 
 ---
 
+## May 2026
+
+### Collaboration
+
+- **Multi-user chat sessions** — Invite team members into any project chat for real-time collaborative AI sessions. Participants see each other's presence and typing indicators live.
+- **@-mentions** — @mention a team member or the AI directly in a message. The AI responds fully when addressed, stays quiet during human-to-human exchanges, and uses a confidence assessment for ambiguous messages.
+- **OWNER badge** — The session creator is visually distinguished with an OWNER badge so it's always clear who started the conversation.
+- **AI Mute** — Any participant can mute the AI mid-session, pausing its contributions without ending the conversation.
+- **Unread indicators** — Unread messages in shared sessions are highlighted so you don't miss contributions from teammates.
+- **Leave session** — Participants can leave a shared session without deleting it for others.
+
+### Plans, billing & permissions
+
+- **Teams and Pro plan tiers** — Cumulus now has distinct Teams and Pro plans with feature gating. Capabilities are unlocked based on your organization's active plan.
+- **Three-tier membership** — Organizations have three membership levels: **OWNER**, **ADMIN**, and **MEMBER**, each with appropriate access. Role management is available from Settings → Team.
+- **Last-admin protection** — The system prevents the last admin from being demoted or removed, ensuring organizations always have at least one admin.
+- **Editor-tier permissions in projects** — Project members can be granted Editor access, giving them the ability to manage sources, update project memory, and adjust project settings without full admin rights.
+- **Stripe upgrade flow** — The upgrade flow supports `plan_id` and coupon URL parameters, making it easy to link to specific plans or discounted offers.
+- **Seat lifecycle management** — Admins can manage seat assignments — inviting, removing, and reassigning members — with usage tracked against plan limits.
+
+### Chat experience
+
+- **Inline chat rename** — Rename any conversation or project-level chat directly in the sidebar without leaving the current view.
+- **Move chat into a project** — Standalone chats can be moved into a project workspace, keeping related conversations organized under a single project.
+- **Fork a chat** — Start a new session branched from any point in an existing conversation. The forked chat inherits the original thread's source citations so the AI can continue referencing the same documents. → [Learn more](/features/citations)
+- **Follow-up question toggle** — Users can enable or disable the AI's follow-up question prompts per their own preference from Settings → Personalization.
+- **Model & reasoning controls in chat** — Switch the underlying model and adjust reasoning depth directly from the chat input area without leaving the conversation.
+- **Scheduled Tasks** — Set up recurring AI tasks on a daily, weekly, biweekly, or monthly cadence. Results are delivered as in-app cards and email notifications. → [Learn more](/features/scheduled-tasks)
+
+### Integrations
+
+- **Google Drive — full sync parity** — Google Drive now supports bulk sync and delta sync on the same cadence as SharePoint. Folder browsing, personal Drive support, and webhook-driven updates are all included. → [Learn more](/features/google-drive)
+- **SharePoint color-tag folder discovery** — SharePoint connections can automatically discover folders marked with specific color tags in your tenant, making it easier to identify content to index without manual folder selection.
+- **SharePoint folder include/exclude** — Admins can specify which SharePoint folders to include or exclude from sync, giving precise control over what the AI can access.
+- **Auto-renewing Graph webhook subscriptions** — SharePoint integrations now automatically renew their Microsoft Graph webhook subscriptions before expiry, preventing silent sync gaps.
+
+### Knowledge & files
+
+- **Least-privilege file access** — A per-file toggle lets admins honour individual file ACLs at query time. When enabled, the AI only surfaces content from files the requesting user has permission to access.
+- **Large-document progressive ingest UI** — Uploading large documents now shows a step-by-step progress indicator: extract → chunk → embed → ready. You can see exactly where a document is in the pipeline.
+- **Project Memories** — Each project workspace now has a shared memory pool separate from personal AI Memory. Project Memories provide persistent context that all project members benefit from, without mixing into individual user memories.
+
+### Platform
+
+- **Gemini embeddings** — The ingest pipeline now supports Google Gemini as an embedding provider across document ingestion, improving retrieval quality for organizations using Gemini models.
+- **Daemon upgraded to Python 3.13** — The background worker service has been updated to Python 3.13, picking up performance improvements and forward compatibility.
+
+---
+
 ## April 2026
 
 ### Follow-Up Questions
@@ -24,6 +73,7 @@ Replaced the token-based VHR formula with VERA (Verified Effort Recovery Assessm
 Multi-user AI chat within project workspaces. Add team members to any project chat, @mention users and AI, and see real-time presence and typing indicators. AI intelligently decides when to contribute — it responds fully when addressed directly, stays quiet during human-to-human exchanges, and uses a confidence assessment for ambiguous messages. File integrations (SharePoint, Google Drive) use an intersection model so AI only accesses files all members can see. → [Learn more](/features/collaborative-chat)
 
 ---
+
 ## March 2026
 
 ### Web Search

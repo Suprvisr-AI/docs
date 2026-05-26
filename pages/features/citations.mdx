@@ -9,12 +9,6 @@ import { Callout } from 'nextra/components'
 
 When Cumulus uses your internal data to answer a question — from a SharePoint document, an uploaded file, or a connected integration — it shows exactly where that information came from. Citations appear as **Cards** that you can open and explore without disrupting the conversation.
 
-<div className="gif-placeholder">
-  <div className="gif-placeholder-icon">🎬</div>
-  <div className="gif-placeholder-title">Citations in action</div>
-  <div className="gif-placeholder-label">GIF placeholder — AI response with citation cards, expanding to see source</div>
-</div>
-
 ---
 
 ## How citations work
@@ -30,12 +24,6 @@ Every time the AI references internal data — a document, a file section, a rec
 ## Citation Cards
 
 Citation Cards live below the AI's response. They're compact by default — click to expand and read the full source excerpt.
-
-<div className="gif-placeholder">
-  <div className="gif-placeholder-icon">🎬</div>
-  <div className="gif-placeholder-title">Exploring a Citation Card</div>
-  <div className="gif-placeholder-label">GIF placeholder — clicking a citation card, reading the source, asking a follow-up</div>
-</div>
 
 ### Probing deeper
 
@@ -64,6 +52,18 @@ Citations appear when the AI draws from:
 
 ---
 
+## Carried sources
+
+When you [fork a chat](/features/conversations) from an existing research thread, the source citations from the original conversation carry forward into the new session. The AI can continue referencing the same documents you were already working with — you don't need to re-upload files or re-establish context.
+
+This is useful when a conversation has surfaced a useful set of sources and you want to explore a related angle in a fresh thread without losing that grounding. The forked chat starts with full awareness of all previously cited documents.
+
+<Callout type="info">
+  Carried sources are inherited at fork time. New documents added after forking are available only in the session where they were uploaded.
+</Callout>
+
+---
+
 ## Why this matters
 
 - **Verify accuracy** — you can check the source and confirm the AI got it right
@@ -76,6 +76,7 @@ Citations appear when the AI draws from:
 ## Related
 
 - [Cards & Artifacts](/features/cards) — AI-generated documents and lists
+- [Conversations](/features/conversations) — forking chats and managing sessions
 - [File Uploads](/features/file-uploads) — attach files that generate citations
 - [SharePoint Integration](/features/sharepoint) — connect your document library
 - [Workspaces](/features/workspaces) — shared project context with team citations

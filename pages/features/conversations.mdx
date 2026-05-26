@@ -1,6 +1,6 @@
 ---
 title: Conversations
-description: How to manage, pin, search, and organize your Cumulus chat history.
+description: How to manage, pin, search, rename, move, fork, and organize your Cumulus chat history.
 ---
 
 import { Callout, Steps } from 'nextra/components'
@@ -63,6 +63,38 @@ Use the **search icon** in the sidebar to search across all your conversations b
 
 ---
 
+## Renaming a conversation
+
+You can rename a chat inline without leaving the thread. Click the conversation title at the top of the chat, type a new name, and press **Enter** to save. The updated name appears immediately in the sidebar.
+
+---
+
+## Moving a chat into a project
+
+If a standalone chat grows into something that needs shared context — project members, sources, or project memory — you can promote it to a project without losing any history.
+
+Hover over the conversation in the sidebar, click **Move to project**, and select the destination project. After the move:
+
+- The full chat history is preserved
+- Project members can now see the conversation
+- Project sources are available in all subsequent messages in that thread
+
+<Callout type="tip">
+  Moving to a project is a one-way action — the chat leaves the standalone list and lives under the project from that point on.
+</Callout>
+
+---
+
+## Forking a chat
+
+At any point in a thread, you can fork the current state into a new standalone chat. This is useful for branching an exploration — trying a different angle or prompt direction — without losing your place in the original conversation.
+
+To fork, open the **...** menu on the message you want to branch from and select **Fork chat**. The forked chat carries forward the conversation history (and, where applicable, source citations) up to that point, giving you a clean starting point for the new direction.
+
+The original conversation is untouched and remains in your sidebar exactly as it was.
+
+---
+
 ## Deleting conversations
 
 To permanently delete a conversation:
@@ -77,11 +109,12 @@ Deleted conversations cannot be recovered.
 
 ## How conversations are named
 
-Cumulus automatically names your conversations based on their content. The name is generated after your first exchange and updates as the conversation evolves.
+Cumulus automatically names your conversations based on their content. The name is generated after your first exchange and updates as the conversation evolves. You can always rename it manually at any time.
 
 ---
 
 ## Related
 
 - [AI Chat](/features/ai-chat) — how to use the main chat interface
+- [Workspaces](/features/workspaces) — project folders with shared context and team members
 - [Cards & Artifacts](/features/cards) — AI-generated documents saved alongside chats

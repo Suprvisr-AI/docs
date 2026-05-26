@@ -1,19 +1,17 @@
 ---
 title: SharePoint Integration
-description: Connect your SharePoint document libraries so Cumulus can reference your files.
+description: Connect your SharePoint document libraries so Cumulus can reference your files with permission-aware search.
 ---
 
 import { Callout, Steps } from 'nextra/components'
 
 # SharePoint Integration
 
-Connect Cumulus to your Microsoft SharePoint document libraries. Once connected, the AI can search, reference, and answer questions about your organisation's documents directly — no manual uploads required.
+Connect Cumulus to your Microsoft SharePoint document libraries. Once connected, the AI can search, reference, and answer questions about your organisation's documents directly — no manual uploads required. Results respect each user's SharePoint permissions at query time.
 
 <Callout type="warning">
   SharePoint integration requires a **Microsoft 365 account**. Users signed in with an email and password cannot connect SharePoint.
 </Callout>
-
-![SharePoint integration walkthrough](/gifs/features/integrations-sharepoint.gif)
 
 ---
 
@@ -24,7 +22,7 @@ With SharePoint connected, Cumulus can:
 - **Search your documents** for relevant information when you ask a question
 - **Reference specific files** without you having to upload them manually
 - **Show sources** — when the AI uses a SharePoint document, it cites the source alongside the response
-- **Stay in sync** — connected libraries are periodically synced so the AI has fresh content
+- **Stay in sync** — an initial bulk sync runs on connection, then ongoing delta sync via Microsoft Graph change notifications keeps content fresh
 
 ---
 
@@ -48,6 +46,10 @@ Click **Add Connection**. You'll be redirected to Microsoft to approve the Cumul
 
 After consent, you'll be prompted to **Link Microsoft Account**. This signs you in with your personal Microsoft 365 account so Cumulus can browse your SharePoint sites on your behalf.
 
+<Callout type="info">
+  **Each user must link their own Microsoft account.** Files only appear in AI answers for a given user if they have access to that file in SharePoint. This enforces SharePoint's own permission model at query time — Cumulus never surfaces a document the user couldn't open themselves.
+</Callout>
+
 ### Select a site
 
 The connection wizard opens at the **Sites** step. Browse or search your available SharePoint sites and click the one you want to connect.
@@ -56,15 +58,17 @@ The connection wizard opens at the **Sites** step. Browse or search your availab
 
 Choose which **document library** (drive) within that site to sync. Each library becomes a separate connection.
 
-### Choose folders (optional)
+### Choose folders to include or exclude (optional)
 
 Browse the folder tree within the library. You can:
 
-- **Select specific folders** to limit what gets indexed — only those folders are synced
-- **Toggle "subfolders"** on any selected folder to recursively include everything inside it
+- **Select specific folders to include** — only those folders (and their descendants) are synced
+- **Exclude folders** — mark specific subfolders to skip, useful for archive folders or content outside your team's scope
 - **Leave everything unselected** to sync the entire library
 
-Click **Connect Library** when ready. The connection is created and an initial sync starts automatically.
+Inclusions and exclusions are recursive — they apply to all descendants of the selected folder.
+
+Click **Connect Library** when ready. The connection is created and an initial bulk sync starts automatically.
 
 </Steps>
 
@@ -78,13 +82,35 @@ Click **Connect Library** when ready. The connection is created and an initial s
 
 ---
 
-## Folder color auto-indexing
+## Color-tag auto-discovery
 
-Cumulus can automatically include folders based on their **SharePoint folder colour tag**. Set your organisation's active colour in the SharePoint settings page — any folder tagged with that colour in SharePoint will be auto-indexed, even without being manually selected in the wizard.
+Cumulus can automatically discover and index folders based on their **SharePoint folder color tag** — no need to manually pick folders site-by-site.
 
-Auto-indexed folders are highlighted in green and labelled **auto** in the folder tree. This is useful for teams that already use colour-coded folders in SharePoint to mark project or departmental content.
+**How to set it up:**
 
-To disable auto-indexing, set the colour to **None**.
+1. Go to **Settings → SharePoint** and choose a color tag for your organisation (red, orange, yellow, green, teal, blue, or purple)
+2. In SharePoint, apply that color tag to any folder you want indexed — across any connected site
+3. On the next sync, Cumulus automatically picks up all folders tagged with that color
+
+Auto-discovered folders are highlighted in green and labelled **auto** in the folder tree inside Cumulus.
+
+<Callout type="tip">
+  This is particularly useful for large organisations with many sites. Instead of configuring each library individually, just tag the right folders in SharePoint and Cumulus keeps up automatically.
+</Callout>
+
+To disable color-tag auto-discovery, set the color to **None** in SharePoint settings.
+
+---
+
+## Sync types
+
+| Sync type | When it runs |
+|-----------|-------------|
+| **Initial bulk sync** | Runs automatically when a library is first connected — indexes all files in scope |
+| **Delta sync** | Runs ongoing via Microsoft Graph change notifications — picks up new, modified, and deleted files |
+| **Manual sync** | Trigger anytime by clicking the **sync icon** on a connection card |
+
+Webhook subscriptions for delta sync renew automatically before they expire, so you don't need to reconnect libraries to keep them live.
 
 ---
 
@@ -102,8 +128,6 @@ Each connection shows real-time sync progress with file-level detail:
 | **Percent complete** | Overall progress bar |
 
 Expand any connection card to see individual file status — each file shows whether it's indexed, pending, processing, or failed, along with its chunk count and last sync time.
-
-Click the **sync icon** on any connection card to trigger a manual delta sync (changes since the last sync).
 
 ### Connection status badges
 
@@ -153,4 +177,5 @@ The library's documents are removed from the AI's context immediately.
 ## Related
 
 - [File Uploads](/features/file-uploads) — manually attach files if you don't use SharePoint
+- [Google Drive Integration](/features/google-drive) — connect Google Drive alongside or instead of SharePoint
 - [Admin Setup](/guides/admin-setup) — organisation-level integration management

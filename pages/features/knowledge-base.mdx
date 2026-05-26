@@ -7,7 +7,7 @@ import { Steps, Callout } from 'nextra/components'
 
 # Knowledge Base
 
-**What it does**: Upload documents to your organization's knowledge base so the AI can search and reference them when answering questions. Supported formats include PDF, DOCX, XLSX, TXT, and Markdown files up to 50 MB each.
+**What it does**: A workspace-wide library of documents your AI can search and cite from. Set up once by an admin, the Knowledge Base is available to your whole team — so everyone gets answers grounded in your organization's own content, without each person needing to re-upload the same files.
 
 ---
 
@@ -23,32 +23,33 @@ Click **Settings** (gear icon) in the sidebar and select **Knowledge Base**.
 
 Click **Upload Document** or drag and drop files directly onto the page. Supported formats:
 
-| Format | Extension |
+| Format | Extensions |
 |--------|-----------|
-| PDF | `.pdf` |
-| Word | `.docx` |
-| Excel | `.xlsx` |
-| Plain text | `.txt` |
-| Markdown | `.md` |
+| Documents | `.pdf`, `.docx`, `.txt`, `.md` |
+| Spreadsheets | `.csv`, `.xlsx` |
+| Data | `.json`, `.xml` |
+| Images | `.png`, `.jpg`, `.gif`, `.webp` |
+
+Maximum file size: **50 MB per file**.
 
 ### Wait for indexing
 
-Each document goes through processing stages:
+Each document moves through a processing pipeline before it's ready:
 
 | Status | Meaning |
 |--------|---------|
-| **Processing** | Document is being read and chunked for AI search |
+| **Processing** | Document is being extracted, chunked, and embedded |
 | **Indexed** | Ready — the AI can now search and reference this document |
 | **Failed** | Something went wrong — check the error message and retry |
 
 ### Start asking questions
 
-Once indexed, the AI automatically searches your knowledge base when relevant to your question. No special syntax needed — just ask naturally.
+Once indexed, the AI automatically searches the Knowledge Base when it's relevant to your question. No special syntax needed — just ask naturally.
 
 </Steps>
 
 <Callout type="info">
-  The knowledge base is organization-wide. Documents uploaded here are searchable by all team members in your organization.
+  Only **admins and owners** can upload to or delete from the Knowledge Base. Regular members can query it but cannot modify it. See [Member Invitations](/features/member-invitations) for role details.
 </Callout>
 
 ---
@@ -71,13 +72,33 @@ You can **search** by filename when you have more than a few documents, and **de
 
 ---
 
+## Least-privilege file access
+
+By default, every indexed document in the Knowledge Base is searchable by all members of your organization. If your team handles sensitive content that not everyone should see, you can restrict this with the **Force least-privilege file access** toggle in Settings.
+
+When enabled:
+
+- Each file in the Knowledge Base honours a per-file access control list (ACL)
+- At query time, Cumulus only searches files the requesting user has been granted access to
+- Answers will never cite a document the asker can't see
+
+This lets admins upload a broad library of documents and grant access granularly — finance files to the finance team, legal files to legal, and so on — without needing separate Knowledge Bases.
+
+<Callout type="info">
+  Least-privilege access is an org-level toggle. Enabling it affects all Knowledge Base documents, not just newly uploaded ones. Review existing file permissions after turning it on.
+</Callout>
+
+---
+
 ## Knowledge Base vs. File Uploads vs. Workspace Sources
 
-| Feature | Scope | Where |
-|---------|-------|-------|
-| **Knowledge Base** | Organization-wide | Settings → Knowledge Base |
-| **File Uploads** | Single chat message | Drag into chat input |
-| **Workspace Sources** | Single workspace/project | Project → Sources tab |
+| Feature | Scope | Persistence | Who uploads |
+|---------|-------|-------------|-------------|
+| **Knowledge Base** | Organization-wide | Persistent | Admins & owners |
+| **File Uploads** | Single chat message | Ad-hoc | Any member |
+| **Workspace Sources** | Single workspace/project | Persistent | Workspace admins & members |
+
+The key distinction: **File Uploads** are for ad-hoc, chat-scoped attachments — useful when you have a one-off document to analyze in a specific conversation. **Knowledge Base** is for content your whole organization needs to reference repeatedly, set up once and maintained centrally.
 
 <Callout type="info">
   For project-specific documents, consider uploading to a [Workspace](/features/workspaces) instead. Workspace sources give the AI focused context for that project without mixing in unrelated org-wide documents.
@@ -89,5 +110,6 @@ You can **search** by filename when you have more than a few documents, and **de
 
 - [File Uploads](/features/file-uploads) — attach files to individual chat messages
 - [Workspaces](/features/workspaces) — project-level document management
+- [Member Invitations](/features/member-invitations) — manage roles and permissions
 - [SharePoint Integration](/features/sharepoint) — auto-sync documents from SharePoint
 - [Google Drive Integration](/features/google-drive) — auto-sync from Google Drive
