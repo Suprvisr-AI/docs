@@ -5,3 +5,14 @@ out/
 *.local
 .DS_Store
 Thumbs.db
+
+# Build artifact
+*.tsbuildinfo
+
+# Claude Code / OMC / Superpowers project state (agent tooling scratch, not product)
+.omc/
+.claude/
+.superpowers/
+
+# One-off scratch mockup
+pricing-mockup.html
