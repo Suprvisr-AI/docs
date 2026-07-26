@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: static export
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # THIS JOB GATES MERGES, and it is the only signal this repo has — there
+      # are no tests and no lint script. For a content site that is adequate:
+      # malformed MDX, a broken import, or a bad _meta.ts entry all fail here.
+      #
+      # NOT gated, deliberately: `tsc --noEmit`. next.config.mjs sets
+      # ignoreBuildErrors because Nextra's _meta.ts files default-export a config
+      # object, which Next's generated page-type validator requires to be a React
+      # component. Every _meta.ts therefore fails typecheck for reasons outside
+      # this repo's control. Don't add a typecheck job expecting green.
+      - name: Build
+        run: npm run build
